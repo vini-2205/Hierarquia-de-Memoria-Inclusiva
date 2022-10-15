@@ -1,0 +1,176 @@
+// SIMULACAO
+// Lucas Santos Rodrigues
+// Vinicius Ferreira Pinheiro
+
+
+module test_cache;
+  reg [4:0] address;
+  reg clock;
+  reg [2:0] data;
+  reg wren;
+  wire  [2:0] q_mem;
+  wire [2:0] q;
+  wire [2:0] data_writeback_mem;
+  wire [3:0] address_writeback_mem;
+  wire [8:0] saida_via1;
+  wire [8:0] saida_via2;
+
+  wire hit_saida;
+
+  Pratica1Parte3 cache(
+    address,
+    clock,
+    data,
+    wren,
+    q,
+    hit_saida,
+	 data_writeback_mem,
+	 address_writeback_mem,
+	 saida_via1,
+	 saida_via2
+);
+
+  initial begin
+    clock = 1;
+    address = 5'b10000;
+    wren = 0;
+    data=100;
+    #1 clock = 0;
+    #1 clock = 1;
+    #1 clock = 0;
+    #1 clock = 1;
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[0][0][8],cache.via[0][0][7],cache.via[0][0][6],cache.via[0][0][2:0],cache.via[0][0]);
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[1][0][8],cache.via[1][0][7],cache.via[1][0][6],cache.via[1][0][2:0],cache.via[1][0]);
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[0][1][8],cache.via[0][1][7],cache.via[0][1][6],cache.via[0][1][2:0],cache.via[0][1]);
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[1][1][8],cache.via[1][1][7],cache.via[1][1][6],cache.via[1][1][2:0],cache.via[1][1]);
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[0][2][8],cache.via[0][2][7],cache.via[0][2][6],cache.via[0][2][2:0],cache.via[0][2]);
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[1][2][8],cache.via[1][2][7],cache.via[1][2][6],cache.via[1][2][2:0],cache.via[1][2]);
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[0][3][8],cache.via[0][3][7],cache.via[0][3][6],cache.via[0][3][2:0],cache.via[0][3]);
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[1][3][8],cache.via[1][3][7],cache.via[1][3][6],cache.via[1][3][2:0],cache.via[1][3]);
+    #1
+    $display("Caso 2");
+    clock = 1;
+    address = 5'b00001;
+    wren = 0;
+    data=100;
+    #1 clock = 0;
+    #1 clock = 1;
+    #1 clock = 0;
+    #1 clock = 1;
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[0][0][8],cache.via[0][0][7],cache.via[0][0][6],cache.via[0][0][2:0],cache.via[0][0]);
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[1][0][8],cache.via[1][0][7],cache.via[1][0][6],cache.via[1][0][2:0],cache.via[1][0]);
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[0][1][8],cache.via[0][1][7],cache.via[0][1][6],cache.via[0][1][2:0],cache.via[0][1]);
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[1][1][8],cache.via[1][1][7],cache.via[1][1][6],cache.via[1][1][2:0],cache.via[1][1]);
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[0][2][8],cache.via[0][2][7],cache.via[0][2][6],cache.via[0][2][2:0],cache.via[0][2]);
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[1][2][8],cache.via[1][2][7],cache.via[1][2][6],cache.via[1][2][2:0],cache.via[1][2]);
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[0][3][8],cache.via[0][3][7],cache.via[0][3][6],cache.via[0][3][2:0],cache.via[0][3]);
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[1][3][8],cache.via[1][3][7],cache.via[1][3][6],cache.via[1][3][2:0],cache.via[1][3]);
+    $display("Caso 3");
+    clock = 1;
+    address = 5'b00001;
+    wren = 1;
+    data = 101;
+    #1 clock = 0;
+    #1 clock = 1;
+    #1 clock = 0;
+    #1 clock = 1;
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[0][0][8],cache.via[0][0][7],cache.via[0][0][6],cache.via[0][0][2:0],cache.via[0][0]);
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[1][0][8],cache.via[1][0][7],cache.via[1][0][6],cache.via[1][0][2:0],cache.via[1][0]);
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[0][1][8],cache.via[0][1][7],cache.via[0][1][6],cache.via[0][1][2:0],cache.via[0][1]);
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[1][1][8],cache.via[1][1][7],cache.via[1][1][6],cache.via[1][1][2:0],cache.via[1][1]);
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[0][2][8],cache.via[0][2][7],cache.via[0][2][6],cache.via[0][2][2:0],cache.via[0][2]);
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[1][2][8],cache.via[1][2][7],cache.via[1][2][6],cache.via[1][2][2:0],cache.via[1][2]);
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[0][3][8],cache.via[0][3][7],cache.via[0][3][6],cache.via[0][3][2:0],cache.via[0][3]);
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[1][3][8],cache.via[1][3][7],cache.via[1][3][6],cache.via[1][3][2:0],cache.via[1][3]);
+    $display("Caso 4");
+    clock = 1;
+    address = 5'b01001;
+    wren = 1;
+    data = 100;
+    #1 clock = 0;
+    #1 clock = 1;
+    #1 clock = 0;
+    #1 clock = 1;
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[0][0][8],cache.via[0][0][7],cache.via[0][0][6],cache.via[0][0][2:0],cache.via[0][0]);
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[1][0][8],cache.via[1][0][7],cache.via[1][0][6],cache.via[1][0][2:0],cache.via[1][0]);
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[0][1][8],cache.via[0][1][7],cache.via[0][1][6],cache.via[0][1][2:0],cache.via[0][1]);
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[1][1][8],cache.via[1][1][7],cache.via[1][1][6],cache.via[1][1][2:0],cache.via[1][1]);
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[0][2][8],cache.via[0][2][7],cache.via[0][2][6],cache.via[0][2][2:0],cache.via[0][2]);
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[1][2][8],cache.via[1][2][7],cache.via[1][2][6],cache.via[1][2][2:0],cache.via[1][2]);
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[0][3][8],cache.via[0][3][7],cache.via[0][3][6],cache.via[0][3][2:0],cache.via[0][3]);
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[1][3][8],cache.via[1][3][7],cache.via[1][3][6],cache.via[1][3][2:0],cache.via[1][3]);
+    $display("Caso 5");
+    clock = 1;
+    address = 5'b00101;
+    wren = 0;
+    data = 100;
+    #1 clock = 0;
+    #1 clock = 1;
+    #1 clock = 0;
+    #1 clock = 1;
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[0][0][8],cache.via[0][0][7],cache.via[0][0][6],cache.via[0][0][2:0],cache.via[0][0]);
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[1][0][8],cache.via[1][0][7],cache.via[1][0][6],cache.via[1][0][2:0],cache.via[1][0]);
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[0][1][8],cache.via[0][1][7],cache.via[0][1][6],cache.via[0][1][2:0],cache.via[0][1]);
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[1][1][8],cache.via[1][1][7],cache.via[1][1][6],cache.via[1][1][2:0],cache.via[1][1]);
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[0][2][8],cache.via[0][2][7],cache.via[0][2][6],cache.via[0][2][2:0],cache.via[0][2]);
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[1][2][8],cache.via[1][2][7],cache.via[1][2][6],cache.via[1][2][2:0],cache.via[1][2]);
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[0][3][8],cache.via[0][3][7],cache.via[0][3][6],cache.via[0][3][2:0],cache.via[0][3]);
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[1][3][8],cache.via[1][3][7],cache.via[1][3][6],cache.via[1][3][2:0],cache.via[1][3]);
+	 $display("Data_mem: %b Addres: %b",cache.sub_address_mem, cache.sub_data_mem); 
+    $display("Caso 6");
+    clock = 1;
+    address = 5'b01101;
+    wren = 1;
+    data = 001;
+    #1 clock = 0;
+    #1 clock = 1;
+    #1 clock = 0;
+    #1 clock = 1;
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[0][0][8],cache.via[0][0][7],cache.via[0][0][6],cache.via[0][0][2:0],cache.via[0][0]);
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[1][0][8],cache.via[1][0][7],cache.via[1][0][6],cache.via[1][0][2:0],cache.via[1][0]);
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[0][1][8],cache.via[0][1][7],cache.via[0][1][6],cache.via[0][1][2:0],cache.via[0][1]);
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[1][1][8],cache.via[1][1][7],cache.via[1][1][6],cache.via[1][1][2:0],cache.via[1][1]);
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[0][2][8],cache.via[0][2][7],cache.via[0][2][6],cache.via[0][2][2:0],cache.via[0][2]);
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[1][2][8],cache.via[1][2][7],cache.via[1][2][6],cache.via[1][2][2:0],cache.via[1][2]);
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[0][3][8],cache.via[0][3][7],cache.via[0][3][6],cache.via[0][3][2:0],cache.via[0][3]);
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[1][3][8],cache.via[1][3][7],cache.via[1][3][6],cache.via[1][3][2:0],cache.via[1][3]);
+	 $display("Caso 7");
+    clock = 1;
+    address = 5'b00001;
+    wren = 0;
+    data = 001;
+    #1 clock = 0;
+    #1 clock = 1;
+    #1 clock = 0;
+    #1 clock = 1;
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[0][0][8],cache.via[0][0][7],cache.via[0][0][6],cache.via[0][0][2:0],cache.via[0][0]);
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[1][0][8],cache.via[1][0][7],cache.via[1][0][6],cache.via[1][0][2:0],cache.via[1][0]);
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[0][1][8],cache.via[0][1][7],cache.via[0][1][6],cache.via[0][1][2:0],cache.via[0][1]);
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[1][1][8],cache.via[1][1][7],cache.via[1][1][6],cache.via[1][1][2:0],cache.via[1][1]);
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[0][2][8],cache.via[0][2][7],cache.via[0][2][6],cache.via[0][2][2:0],cache.via[0][2]);
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[1][2][8],cache.via[1][2][7],cache.via[1][2][6],cache.via[1][2][2:0],cache.via[1][2]);
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[0][3][8],cache.via[0][3][7],cache.via[0][3][6],cache.via[0][3][2:0],cache.via[0][3]);
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[1][3][8],cache.via[1][3][7],cache.via[1][3][6],cache.via[1][3][2:0],cache.via[1][3]);
+    $display("Caso 8");
+    clock = 1;
+    address = 5'b01001;
+    wren = 0;
+    data = 001;
+    #1 clock = 0;
+    #1 clock = 1;
+    #1 clock = 0;
+    #1 clock = 1; 
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[0][0][8],cache.via[0][0][7],cache.via[0][0][6],cache.via[0][0][2:0],cache.via[0][0]);
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[1][0][8],cache.via[1][0][7],cache.via[1][0][6],cache.via[1][0][2:0],cache.via[1][0]);
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[0][1][8],cache.via[0][1][7],cache.via[0][1][6],cache.via[0][1][2:0],cache.via[0][1]);
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[1][1][8],cache.via[1][1][7],cache.via[1][1][6],cache.via[1][1][2:0],cache.via[1][1]);
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[0][2][8],cache.via[0][2][7],cache.via[0][2][6],cache.via[0][2][2:0],cache.via[0][2]);
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[1][2][8],cache.via[1][2][7],cache.via[1][2][6],cache.via[1][2][2:0],cache.via[1][2]);
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[0][3][8],cache.via[0][3][7],cache.via[0][3][6],cache.via[0][3][2:0],cache.via[0][3]);
+    $display("HIT: %b DataSaida: %b valido: %b lru: %b Dirty: %b novaData: %b addres: %b", hit_saida, q,cache.via[1][3][8],cache.via[1][3][7],cache.via[1][3][6],cache.via[1][3][2:0],cache.via[1][3]);
+	 
+	 $finish();
+  end
+
+
+endmodule

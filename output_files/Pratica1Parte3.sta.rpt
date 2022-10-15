@@ -1,0 +1,1305 @@
+TimeQuest Timing Analyzer report for Pratica1Parte3
+Thu Sep 15 23:03:20 2022
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. Clocks
+  5. Slow Model Fmax Summary
+  6. Slow Model Setup Summary
+  7. Slow Model Hold Summary
+  8. Slow Model Recovery Summary
+  9. Slow Model Removal Summary
+ 10. Slow Model Minimum Pulse Width Summary
+ 11. Slow Model Setup: 'clock'
+ 12. Slow Model Hold: 'clock'
+ 13. Slow Model Minimum Pulse Width: 'clock'
+ 14. Setup Times
+ 15. Hold Times
+ 16. Clock to Output Times
+ 17. Minimum Clock to Output Times
+ 18. Fast Model Setup Summary
+ 19. Fast Model Hold Summary
+ 20. Fast Model Recovery Summary
+ 21. Fast Model Removal Summary
+ 22. Fast Model Minimum Pulse Width Summary
+ 23. Fast Model Setup: 'clock'
+ 24. Fast Model Hold: 'clock'
+ 25. Fast Model Minimum Pulse Width: 'clock'
+ 26. Setup Times
+ 27. Hold Times
+ 28. Clock to Output Times
+ 29. Minimum Clock to Output Times
+ 30. Multicorner Timing Analysis Summary
+ 31. Setup Times
+ 32. Hold Times
+ 33. Clock to Output Times
+ 34. Minimum Clock to Output Times
+ 35. Setup Transfers
+ 36. Hold Transfers
+ 37. Report TCCS
+ 38. Report RSKM
+ 39. Unconstrained Paths
+ 40. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; Pratica1Parte3                                                    ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C35F672C6                                                      ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
+Parallel compilation was disabled, but you have multiple processors available. Enable parallel compilation to reduce compilation time.
++-------------------------------------+
+; Parallel Compilation                ;
++----------------------------+--------+
+; Processors                 ; Number ;
++----------------------------+--------+
+; Number detected on machine ; 12     ;
+; Maximum allowed            ; 1      ;
++----------------------------+--------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                            ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets   ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+; clock      ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clock } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+-----------+
+
+
++-------------------------------------------------+
+; Slow Model Fmax Summary                         ;
++-----------+-----------------+------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
++-----------+-----------------+------------+------+
+; 49.28 MHz ; 49.28 MHz       ; clock      ;      ;
++-----------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++---------------------------------+
+; Slow Model Setup Summary        ;
++-------+---------+---------------+
+; Clock ; Slack   ; End Point TNS ;
++-------+---------+---------------+
+; clock ; -14.630 ; -1037.283     ;
++-------+---------+---------------+
+
+
++-------------------------------+
+; Slow Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clock ; 0.391 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clock ; -2.000 ; -148.380              ;
++-------+--------+-----------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clock'                                                                                         ;
++---------+--------------+--------------------+--------------+-------------+--------------+------------+------------+
+; Slack   ; From Node    ; To Node            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++---------+--------------+--------------------+--------------+-------------+--------------+------------+------------+
+; -14.630 ; via[1][0][4] ; sub_address_mem[3] ; clock        ; clock       ; 1.000        ; 0.014      ; 15.680     ;
+; -14.616 ; via[0][2][4] ; sub_address_mem[0] ; clock        ; clock       ; 1.000        ; -0.044     ; 15.608     ;
+; -14.614 ; via[0][2][4] ; sub_address_mem[3] ; clock        ; clock       ; 1.000        ; -0.001     ; 15.649     ;
+; -14.613 ; via[1][0][4] ; sub_address_mem[2] ; clock        ; clock       ; 1.000        ; 0.014      ; 15.663     ;
+; -14.612 ; via[0][2][4] ; sub_address_mem[1] ; clock        ; clock       ; 1.000        ; -0.044     ; 15.604     ;
+; -14.602 ; via[0][2][4] ; sub_address_mem[2] ; clock        ; clock       ; 1.000        ; -0.001     ; 15.637     ;
+; -14.585 ; via[1][0][4] ; sub_address_mem[0] ; clock        ; clock       ; 1.000        ; -0.029     ; 15.592     ;
+; -14.581 ; via[1][0][4] ; sub_address_mem[1] ; clock        ; clock       ; 1.000        ; -0.029     ; 15.588     ;
+; -14.544 ; via[0][0][3] ; sub_address_mem[2] ; clock        ; clock       ; 1.000        ; 0.000      ; 15.580     ;
+; -14.530 ; via[0][0][3] ; sub_address_mem[0] ; clock        ; clock       ; 1.000        ; -0.043     ; 15.523     ;
+; -14.528 ; via[0][0][3] ; sub_address_mem[3] ; clock        ; clock       ; 1.000        ; 0.000      ; 15.564     ;
+; -14.526 ; via[0][0][3] ; sub_address_mem[1] ; clock        ; clock       ; 1.000        ; -0.043     ; 15.519     ;
+; -14.491 ; via[0][2][3] ; sub_address_mem[0] ; clock        ; clock       ; 1.000        ; -0.044     ; 15.483     ;
+; -14.489 ; via[0][2][3] ; sub_address_mem[3] ; clock        ; clock       ; 1.000        ; -0.001     ; 15.524     ;
+; -14.488 ; via[1][0][3] ; sub_address_mem[3] ; clock        ; clock       ; 1.000        ; 0.014      ; 15.538     ;
+; -14.487 ; via[0][2][3] ; sub_address_mem[1] ; clock        ; clock       ; 1.000        ; -0.044     ; 15.479     ;
+; -14.477 ; via[0][2][3] ; sub_address_mem[2] ; clock        ; clock       ; 1.000        ; -0.001     ; 15.512     ;
+; -14.471 ; via[1][0][3] ; sub_address_mem[2] ; clock        ; clock       ; 1.000        ; 0.014      ; 15.521     ;
+; -14.443 ; via[1][0][3] ; sub_address_mem[0] ; clock        ; clock       ; 1.000        ; -0.029     ; 15.450     ;
+; -14.439 ; via[1][0][3] ; sub_address_mem[1] ; clock        ; clock       ; 1.000        ; -0.029     ; 15.446     ;
+; -14.414 ; via[0][3][4] ; sub_address_mem[0] ; clock        ; clock       ; 1.000        ; -0.057     ; 15.393     ;
+; -14.412 ; via[0][3][4] ; sub_address_mem[3] ; clock        ; clock       ; 1.000        ; -0.014     ; 15.434     ;
+; -14.410 ; via[0][1][4] ; sub_address_mem[3] ; clock        ; clock       ; 1.000        ; 0.014      ; 15.460     ;
+; -14.410 ; via[0][3][4] ; sub_address_mem[1] ; clock        ; clock       ; 1.000        ; -0.057     ; 15.389     ;
+; -14.404 ; via[0][0][4] ; sub_address_mem[2] ; clock        ; clock       ; 1.000        ; 0.000      ; 15.440     ;
+; -14.400 ; via[0][3][4] ; sub_address_mem[2] ; clock        ; clock       ; 1.000        ; -0.014     ; 15.422     ;
+; -14.397 ; via[1][0][4] ; sub_data_mem[2]    ; clock        ; clock       ; 1.000        ; 0.014      ; 15.447     ;
+; -14.393 ; via[0][1][4] ; sub_address_mem[2] ; clock        ; clock       ; 1.000        ; 0.014      ; 15.443     ;
+; -14.390 ; via[0][0][4] ; sub_address_mem[0] ; clock        ; clock       ; 1.000        ; -0.043     ; 15.383     ;
+; -14.388 ; via[0][0][4] ; sub_address_mem[3] ; clock        ; clock       ; 1.000        ; 0.000      ; 15.424     ;
+; -14.386 ; via[0][0][4] ; sub_address_mem[1] ; clock        ; clock       ; 1.000        ; -0.043     ; 15.379     ;
+; -14.351 ; via[0][2][5] ; sub_address_mem[0] ; clock        ; clock       ; 1.000        ; -0.044     ; 15.343     ;
+; -14.349 ; via[0][2][5] ; sub_address_mem[3] ; clock        ; clock       ; 1.000        ; -0.001     ; 15.384     ;
+; -14.347 ; via[0][2][5] ; sub_address_mem[1] ; clock        ; clock       ; 1.000        ; -0.044     ; 15.339     ;
+; -14.337 ; via[0][2][5] ; sub_address_mem[2] ; clock        ; clock       ; 1.000        ; -0.001     ; 15.372     ;
+; -14.332 ; via[1][0][4] ; sub_data_mem[1]    ; clock        ; clock       ; 1.000        ; 0.002      ; 15.370     ;
+; -14.318 ; via[0][2][4] ; data_saida[2]      ; clock        ; clock       ; 1.000        ; 0.009      ; 15.363     ;
+; -14.298 ; via[1][0][4] ; sub_data_mem[0]    ; clock        ; clock       ; 1.000        ; 0.014      ; 15.348     ;
+; -14.296 ; via[0][3][3] ; sub_address_mem[0] ; clock        ; clock       ; 1.000        ; -0.057     ; 15.275     ;
+; -14.294 ; via[0][3][3] ; sub_address_mem[3] ; clock        ; clock       ; 1.000        ; -0.014     ; 15.316     ;
+; -14.292 ; via[0][3][3] ; sub_address_mem[1] ; clock        ; clock       ; 1.000        ; -0.057     ; 15.271     ;
+; -14.287 ; via[1][0][4] ; data_saida[2]      ; clock        ; clock       ; 1.000        ; 0.024      ; 15.347     ;
+; -14.282 ; via[0][3][3] ; sub_address_mem[2] ; clock        ; clock       ; 1.000        ; -0.014     ; 15.304     ;
+; -14.267 ; via[0][1][4] ; sub_address_mem[0] ; clock        ; clock       ; 1.000        ; -0.029     ; 15.274     ;
+; -14.263 ; via[0][1][4] ; sub_address_mem[1] ; clock        ; clock       ; 1.000        ; -0.029     ; 15.270     ;
+; -14.256 ; via[0][2][4] ; sub_data_mem[2]    ; clock        ; clock       ; 1.000        ; -0.001     ; 15.291     ;
+; -14.255 ; via[1][0][3] ; sub_data_mem[2]    ; clock        ; clock       ; 1.000        ; 0.014      ; 15.305     ;
+; -14.247 ; via[1][0][5] ; sub_address_mem[3] ; clock        ; clock       ; 1.000        ; 0.014      ; 15.297     ;
+; -14.244 ; via[1][0][5] ; sub_address_mem[2] ; clock        ; clock       ; 1.000        ; 0.014      ; 15.294     ;
+; -14.232 ; via[0][0][3] ; data_saida[2]      ; clock        ; clock       ; 1.000        ; 0.010      ; 15.278     ;
+; -14.230 ; via[1][0][5] ; sub_address_mem[0] ; clock        ; clock       ; 1.000        ; -0.029     ; 15.237     ;
+; -14.226 ; via[1][0][5] ; sub_address_mem[1] ; clock        ; clock       ; 1.000        ; -0.029     ; 15.233     ;
+; -14.206 ; via[0][0][3] ; sub_data_mem[2]    ; clock        ; clock       ; 1.000        ; 0.000      ; 15.242     ;
+; -14.193 ; via[0][2][3] ; data_saida[2]      ; clock        ; clock       ; 1.000        ; 0.009      ; 15.238     ;
+; -14.190 ; via[1][0][3] ; sub_data_mem[1]    ; clock        ; clock       ; 1.000        ; 0.002      ; 15.228     ;
+; -14.185 ; via[0][2][4] ; data_saida[1]      ; clock        ; clock       ; 1.000        ; 0.009      ; 15.230     ;
+; -14.177 ; via[0][1][4] ; sub_data_mem[2]    ; clock        ; clock       ; 1.000        ; 0.014      ; 15.227     ;
+; -14.172 ; via[0][0][5] ; sub_address_mem[2] ; clock        ; clock       ; 1.000        ; 0.006      ; 15.214     ;
+; -14.171 ; via[0][2][4] ; sub_data_mem[1]    ; clock        ; clock       ; 1.000        ; -0.013     ; 15.194     ;
+; -14.169 ; via[0][2][4] ; data_saida[0]      ; clock        ; clock       ; 1.000        ; 0.009      ; 15.214     ;
+; -14.168 ; via[0][2][4] ; sub_data_mem[0]    ; clock        ; clock       ; 1.000        ; -0.001     ; 15.203     ;
+; -14.158 ; via[0][0][5] ; sub_address_mem[0] ; clock        ; clock       ; 1.000        ; -0.037     ; 15.157     ;
+; -14.156 ; via[0][0][5] ; sub_address_mem[3] ; clock        ; clock       ; 1.000        ; 0.006      ; 15.198     ;
+; -14.156 ; via[1][0][3] ; sub_data_mem[0]    ; clock        ; clock       ; 1.000        ; 0.014      ; 15.206     ;
+; -14.154 ; via[0][0][5] ; sub_address_mem[1] ; clock        ; clock       ; 1.000        ; -0.037     ; 15.153     ;
+; -14.154 ; via[1][0][4] ; data_saida[1]      ; clock        ; clock       ; 1.000        ; 0.024      ; 15.214     ;
+; -14.150 ; via[0][0][8] ; sub_address_mem[2] ; clock        ; clock       ; 1.000        ; -0.006     ; 15.180     ;
+; -14.145 ; via[1][0][3] ; data_saida[2]      ; clock        ; clock       ; 1.000        ; 0.024      ; 15.205     ;
+; -14.142 ; via[0][3][5] ; sub_address_mem[0] ; clock        ; clock       ; 1.000        ; -0.057     ; 15.121     ;
+; -14.140 ; via[0][3][5] ; sub_address_mem[3] ; clock        ; clock       ; 1.000        ; -0.014     ; 15.162     ;
+; -14.138 ; via[0][3][5] ; sub_address_mem[1] ; clock        ; clock       ; 1.000        ; -0.057     ; 15.117     ;
+; -14.138 ; via[1][0][4] ; data_saida[0]      ; clock        ; clock       ; 1.000        ; 0.024      ; 15.198     ;
+; -14.136 ; via[0][0][8] ; sub_address_mem[0] ; clock        ; clock       ; 1.000        ; -0.049     ; 15.123     ;
+; -14.134 ; via[0][0][8] ; sub_address_mem[3] ; clock        ; clock       ; 1.000        ; -0.006     ; 15.164     ;
+; -14.132 ; via[0][0][8] ; sub_address_mem[1] ; clock        ; clock       ; 1.000        ; -0.049     ; 15.119     ;
+; -14.131 ; via[0][2][3] ; sub_data_mem[2]    ; clock        ; clock       ; 1.000        ; -0.001     ; 15.166     ;
+; -14.130 ; via[0][1][3] ; sub_address_mem[3] ; clock        ; clock       ; 1.000        ; 0.014      ; 15.180     ;
+; -14.128 ; via[0][3][5] ; sub_address_mem[2] ; clock        ; clock       ; 1.000        ; -0.014     ; 15.150     ;
+; -14.126 ; via[0][0][3] ; sub_data_mem[1]    ; clock        ; clock       ; 1.000        ; -0.012     ; 15.150     ;
+; -14.116 ; via[0][3][4] ; data_saida[2]      ; clock        ; clock       ; 1.000        ; -0.004     ; 15.148     ;
+; -14.113 ; via[0][1][3] ; sub_address_mem[2] ; clock        ; clock       ; 1.000        ; 0.014      ; 15.163     ;
+; -14.112 ; via[0][1][4] ; sub_data_mem[1]    ; clock        ; clock       ; 1.000        ; 0.002      ; 15.150     ;
+; -14.099 ; via[0][0][3] ; data_saida[1]      ; clock        ; clock       ; 1.000        ; 0.010      ; 15.145     ;
+; -14.092 ; via[0][0][4] ; data_saida[2]      ; clock        ; clock       ; 1.000        ; 0.010      ; 15.138     ;
+; -14.083 ; via[0][0][3] ; data_saida[0]      ; clock        ; clock       ; 1.000        ; 0.010      ; 15.129     ;
+; -14.082 ; via[0][0][3] ; sub_data_mem[0]    ; clock        ; clock       ; 1.000        ; 0.000      ; 15.118     ;
+; -14.079 ; via[0][2][4] ; sub_wren           ; clock        ; clock       ; 1.000        ; -0.044     ; 15.071     ;
+; -14.078 ; via[0][1][4] ; sub_data_mem[0]    ; clock        ; clock       ; 1.000        ; 0.014      ; 15.128     ;
+; -14.066 ; via[0][0][4] ; sub_data_mem[2]    ; clock        ; clock       ; 1.000        ; 0.000      ; 15.102     ;
+; -14.060 ; via[0][2][3] ; data_saida[1]      ; clock        ; clock       ; 1.000        ; 0.009      ; 15.105     ;
+; -14.054 ; via[0][3][4] ; sub_data_mem[2]    ; clock        ; clock       ; 1.000        ; -0.014     ; 15.076     ;
+; -14.053 ; via[0][2][5] ; data_saida[2]      ; clock        ; clock       ; 1.000        ; 0.009      ; 15.098     ;
+; -14.048 ; via[1][0][4] ; sub_wren           ; clock        ; clock       ; 1.000        ; -0.029     ; 15.055     ;
+; -14.046 ; via[0][2][3] ; sub_data_mem[1]    ; clock        ; clock       ; 1.000        ; -0.013     ; 15.069     ;
+; -14.044 ; via[0][2][3] ; data_saida[0]      ; clock        ; clock       ; 1.000        ; 0.009      ; 15.089     ;
+; -14.043 ; via[0][2][3] ; sub_data_mem[0]    ; clock        ; clock       ; 1.000        ; -0.001     ; 15.078     ;
+; -14.014 ; via[1][0][5] ; sub_data_mem[2]    ; clock        ; clock       ; 1.000        ; 0.014      ; 15.064     ;
+; -14.012 ; via[1][0][3] ; data_saida[1]      ; clock        ; clock       ; 1.000        ; 0.024      ; 15.072     ;
+; -14.001 ; via[0][1][5] ; sub_address_mem[3] ; clock        ; clock       ; 1.000        ; 0.014      ; 15.051     ;
+; -13.998 ; via[0][3][3] ; data_saida[2]      ; clock        ; clock       ; 1.000        ; -0.004     ; 15.030     ;
++---------+--------------+--------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clock'                                                                                                                                                                                                    ;
++-------+--------------------+--------------------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node          ; To Node                                                                                                                  ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+--------------------+--------------------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.391 ; via[0][1][4]       ; via[0][1][4]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; via[0][1][5]       ; via[0][1][5]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; via[0][2][5]       ; via[0][2][5]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; via[0][2][7]       ; via[0][2][7]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; via[1][2][7]       ; via[1][2][7]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; via[0][2][3]       ; via[0][2][3]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; via[0][2][4]       ; via[0][2][4]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; via[0][3][3]       ; via[0][3][3]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; via[0][3][4]       ; via[0][3][4]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; via[1][3][7]       ; via[1][3][7]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; via[0][3][5]       ; via[0][3][5]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; via[0][0][5]       ; via[0][0][5]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; via[1][0][7]       ; via[1][0][7]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; via[1][0][5]       ; via[1][0][5]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; via[1][0][3]       ; via[1][0][3]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; via[1][0][4]       ; via[1][0][4]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; via[0][0][3]       ; via[0][0][3]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; via[0][0][4]       ; via[0][0][4]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; via[1][1][7]       ; via[1][1][7]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; via[0][1][3]       ; via[0][1][3]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; via[0][0][8]       ; via[0][0][8]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; via[1][2][5]       ; via[1][2][5]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; via[1][2][4]       ; via[1][2][4]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; via[1][2][3]       ; via[1][2][3]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; via[1][3][3]       ; via[1][3][3]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; via[1][3][5]       ; via[1][3][5]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; via[1][3][4]       ; via[1][3][4]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; via[0][3][6]       ; via[0][3][6]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; via[1][1][6]       ; via[1][1][6]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; via[1][1][4]       ; via[1][1][4]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; via[1][1][5]       ; via[1][1][5]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.391 ; via[1][1][3]       ; via[1][1][3]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 0.657      ;
+; 0.692 ; via[0][1][7]       ; via[0][1][7]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 0.958      ;
+; 0.798 ; via[0][0][8]       ; via1[8]                                                                                                                  ; clock        ; clock       ; 0.000        ; 0.000      ; 1.064      ;
+; 0.830 ; via[0][1][2]       ; sub_data_writeback_mem[2]                                                                                                ; clock        ; clock       ; 0.000        ; 0.000      ; 1.096      ;
+; 0.873 ; via[0][0][7]       ; via[0][0][7]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 1.139      ;
+; 0.951 ; via[0][3][1]       ; via[0][3][1]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 1.217      ;
+; 1.047 ; via[0][0][6]       ; via[0][0][6]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 1.313      ;
+; 1.055 ; via[0][0][1]       ; via[0][0][1]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 1.321      ;
+; 1.069 ; via[0][3][0]       ; via[0][3][0]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 1.335      ;
+; 1.174 ; data_retorno[2]    ; data_retorno[2]                                                                                                          ; clock        ; clock       ; 0.000        ; 0.000      ; 1.440      ;
+; 1.206 ; via[0][1][0]       ; via[0][1][0]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 1.472      ;
+; 1.236 ; via[0][0][3]       ; sub_address_mem[2]                                                                                                       ; clock        ; clock       ; 0.000        ; 0.000      ; 1.502      ;
+; 1.252 ; via[0][2][6]       ; via[0][2][6]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 1.518      ;
+; 1.279 ; via[1][0][1]       ; data_saida[1]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.010      ; 1.555      ;
+; 1.295 ; via[0][1][0]       ; sub_data_writeback_mem[0]                                                                                                ; clock        ; clock       ; 0.000        ; 0.014      ; 1.575      ;
+; 1.344 ; via[0][0][4]       ; sub_address_mem[3]                                                                                                       ; clock        ; clock       ; 0.000        ; 0.000      ; 1.610      ;
+; 1.345 ; via[0][2][2]       ; via[0][2][2]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 1.611      ;
+; 1.351 ; via[0][2][1]       ; via[0][2][1]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 1.617      ;
+; 1.354 ; via[0][2][0]       ; via[0][2][0]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 1.620      ;
+; 1.368 ; via[1][1][4]       ; sub_address_writeback_mem[3]                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 1.634      ;
+; 1.369 ; data_retorno[0]    ; data_retorno[0]                                                                                                          ; clock        ; clock       ; 0.000        ; 0.000      ; 1.635      ;
+; 1.374 ; via[1][1][3]       ; sub_address_writeback_mem[2]                                                                                             ; clock        ; clock       ; 0.000        ; 0.026      ; 1.666      ;
+; 1.387 ; via[0][1][4]       ; sub_address_writeback_mem[3]                                                                                             ; clock        ; clock       ; 0.000        ; -0.001     ; 1.652      ;
+; 1.402 ; sub_data_mem[1]    ; memoria_principal:memoria|altsyncram:altsyncram_component|altsyncram_d8f1:auto_generated|ram_block1a0~porta_datain_reg1  ; clock        ; clock       ; -0.500       ; 0.060      ; 1.196      ;
+; 1.402 ; via[1][3][6]       ; via[1][3][6]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 1.668      ;
+; 1.412 ; via[0][1][1]       ; via[0][1][1]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 1.678      ;
+; 1.412 ; via[0][3][6]       ; via1[6]                                                                                                                  ; clock        ; clock       ; 0.000        ; -0.003     ; 1.675      ;
+; 1.425 ; via[0][1][1]       ; sub_data_writeback_mem[1]                                                                                                ; clock        ; clock       ; 0.000        ; 0.014      ; 1.705      ;
+; 1.503 ; via[1][0][6]       ; via[1][0][6]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 1.769      ;
+; 1.513 ; data_retorno[1]    ; data_retorno[1]                                                                                                          ; clock        ; clock       ; 0.000        ; 0.000      ; 1.779      ;
+; 1.531 ; via[1][1][1]       ; sub_data_writeback_mem[1]                                                                                                ; clock        ; clock       ; 0.000        ; 0.009      ; 1.806      ;
+; 1.540 ; via[1][0][0]       ; data_saida[0]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.010      ; 1.816      ;
+; 1.567 ; via[0][0][0]       ; data_saida[0]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.005      ; 1.838      ;
+; 1.569 ; via[0][0][0]       ; sub_data_mem[0]                                                                                                          ; clock        ; clock       ; 0.000        ; -0.005     ; 1.830      ;
+; 1.595 ; via[1][3][4]       ; via2[4]                                                                                                                  ; clock        ; clock       ; 0.000        ; 0.000      ; 1.861      ;
+; 1.605 ; via[1][1][2]       ; via[1][1][2]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 1.871      ;
+; 1.610 ; via[0][1][3]       ; sub_address_writeback_mem[2]                                                                                             ; clock        ; clock       ; 0.000        ; 0.024      ; 1.900      ;
+; 1.628 ; via[0][0][1]       ; data_saida[1]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.005      ; 1.899      ;
+; 1.632 ; via[0][0][0]       ; via[0][0][0]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 1.898      ;
+; 1.684 ; via[0][1][0]       ; sub_data_mem[0]                                                                                                          ; clock        ; clock       ; 0.000        ; 0.004      ; 1.954      ;
+; 1.693 ; sub_data_mem[0]    ; memoria_principal:memoria|altsyncram:altsyncram_component|altsyncram_d8f1:auto_generated|ram_block1a0~porta_datain_reg0  ; clock        ; clock       ; -0.500       ; 0.048      ; 1.475      ;
+; 1.707 ; sub_data_mem[2]    ; memoria_principal:memoria|altsyncram:altsyncram_component|altsyncram_d8f1:auto_generated|ram_block1a0~porta_datain_reg2  ; clock        ; clock       ; -0.500       ; 0.048      ; 1.489      ;
+; 1.708 ; sub_address_mem[3] ; memoria_principal:memoria|altsyncram:altsyncram_component|altsyncram_d8f1:auto_generated|ram_block1a0~porta_address_reg3 ; clock        ; clock       ; -0.500       ; 0.049      ; 1.491      ;
+; 1.725 ; sub_address_mem[2] ; memoria_principal:memoria|altsyncram:altsyncram_component|altsyncram_d8f1:auto_generated|ram_block1a0~porta_address_reg2 ; clock        ; clock       ; -0.500       ; 0.049      ; 1.508      ;
+; 1.737 ; via[0][3][2]       ; via1[2]                                                                                                                  ; clock        ; clock       ; 0.000        ; 0.000      ; 2.003      ;
+; 1.739 ; via[0][1][7]       ; via[0][1][6]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 2.005      ;
+; 1.743 ; via[1][1][1]       ; via[1][1][1]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 2.009      ;
+; 1.770 ; via[0][3][7]       ; via[0][3][7]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 2.036      ;
+; 1.813 ; via[1][3][3]       ; via[1][3][2]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.020      ; 2.099      ;
+; 1.813 ; via[1][3][3]       ; via[1][3][1]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.020      ; 2.099      ;
+; 1.823 ; via[0][1][3]       ; sub_address_mem[2]                                                                                                       ; clock        ; clock       ; 0.000        ; 0.014      ; 2.103      ;
+; 1.855 ; via[0][0][2]       ; data_saida[2]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.017      ; 2.138      ;
+; 1.879 ; via[0][2][7]       ; via[1][2][7]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 2.145      ;
+; 1.884 ; data_retorno[2]    ; via[0][0][2]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 2.150      ;
+; 1.911 ; via[1][0][2]       ; data_saida[2]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.025      ; 2.202      ;
+; 1.914 ; via[0][1][1]       ; sub_data_mem[1]                                                                                                          ; clock        ; clock       ; 0.000        ; -0.008     ; 2.172      ;
+; 1.916 ; via[1][3][6]       ; via2[6]                                                                                                                  ; clock        ; clock       ; 0.000        ; -0.005     ; 2.177      ;
+; 1.919 ; data_retorno[0]    ; via[0][1][0]                                                                                                             ; clock        ; clock       ; 0.000        ; -0.004     ; 2.181      ;
+; 1.921 ; via[1][2][6]       ; via[1][2][6]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 2.187      ;
+; 1.934 ; sub_address_mem[1] ; memoria_principal:memoria|altsyncram:altsyncram_component|altsyncram_d8f1:auto_generated|ram_block1a0~porta_address_reg1 ; clock        ; clock       ; -0.500       ; 0.092      ; 1.760      ;
+; 1.938 ; data_retorno[0]    ; data_saida[0]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.010      ; 2.214      ;
+; 1.962 ; sub_address_mem[0] ; memoria_principal:memoria|altsyncram:altsyncram_component|altsyncram_d8f1:auto_generated|ram_block1a0~porta_address_reg0 ; clock        ; clock       ; -0.500       ; 0.092      ; 1.788      ;
+; 1.979 ; via[1][1][2]       ; sub_data_writeback_mem[2]                                                                                                ; clock        ; clock       ; 0.000        ; -0.016     ; 2.229      ;
+; 2.002 ; via[1][0][0]       ; via[1][0][0]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 2.268      ;
+; 2.021 ; via[0][0][1]       ; sub_data_mem[1]                                                                                                          ; clock        ; clock       ; 0.000        ; -0.017     ; 2.270      ;
+; 2.042 ; via[1][2][2]       ; via[1][2][2]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 2.308      ;
+; 2.062 ; via[1][1][0]       ; sub_data_writeback_mem[0]                                                                                                ; clock        ; clock       ; 0.000        ; 0.009      ; 2.337      ;
+; 2.067 ; via[1][2][1]       ; via[1][2][1]                                                                                                             ; clock        ; clock       ; 0.000        ; 0.000      ; 2.333      ;
+; 2.073 ; via[1][3][7]       ; via1[7]                                                                                                                  ; clock        ; clock       ; 0.000        ; 0.000      ; 2.339      ;
++-------+--------------------+--------------------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clock'                                                                                                                                                                   ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------------------------------------------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                                                                                                   ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------------------------------------------------------------------------------------------------+
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; memoria_principal:memoria|altsyncram:altsyncram_component|altsyncram_d8f1:auto_generated|ram_block1a0~porta_address_reg0 ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; memoria_principal:memoria|altsyncram:altsyncram_component|altsyncram_d8f1:auto_generated|ram_block1a0~porta_address_reg0 ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; memoria_principal:memoria|altsyncram:altsyncram_component|altsyncram_d8f1:auto_generated|ram_block1a0~porta_address_reg1 ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; memoria_principal:memoria|altsyncram:altsyncram_component|altsyncram_d8f1:auto_generated|ram_block1a0~porta_address_reg1 ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; memoria_principal:memoria|altsyncram:altsyncram_component|altsyncram_d8f1:auto_generated|ram_block1a0~porta_address_reg2 ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; memoria_principal:memoria|altsyncram:altsyncram_component|altsyncram_d8f1:auto_generated|ram_block1a0~porta_address_reg2 ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; memoria_principal:memoria|altsyncram:altsyncram_component|altsyncram_d8f1:auto_generated|ram_block1a0~porta_address_reg3 ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; memoria_principal:memoria|altsyncram:altsyncram_component|altsyncram_d8f1:auto_generated|ram_block1a0~porta_address_reg3 ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; memoria_principal:memoria|altsyncram:altsyncram_component|altsyncram_d8f1:auto_generated|ram_block1a0~porta_datain_reg0  ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; memoria_principal:memoria|altsyncram:altsyncram_component|altsyncram_d8f1:auto_generated|ram_block1a0~porta_datain_reg0  ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; memoria_principal:memoria|altsyncram:altsyncram_component|altsyncram_d8f1:auto_generated|ram_block1a0~porta_datain_reg1  ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; memoria_principal:memoria|altsyncram:altsyncram_component|altsyncram_d8f1:auto_generated|ram_block1a0~porta_datain_reg1  ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; memoria_principal:memoria|altsyncram:altsyncram_component|altsyncram_d8f1:auto_generated|ram_block1a0~porta_datain_reg2  ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; memoria_principal:memoria|altsyncram:altsyncram_component|altsyncram_d8f1:auto_generated|ram_block1a0~porta_datain_reg2  ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; memoria_principal:memoria|altsyncram:altsyncram_component|altsyncram_d8f1:auto_generated|ram_block1a0~porta_memory_reg0  ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; memoria_principal:memoria|altsyncram:altsyncram_component|altsyncram_d8f1:auto_generated|ram_block1a0~porta_memory_reg0  ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; memoria_principal:memoria|altsyncram:altsyncram_component|altsyncram_d8f1:auto_generated|ram_block1a0~porta_we_reg       ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; memoria_principal:memoria|altsyncram:altsyncram_component|altsyncram_d8f1:auto_generated|ram_block1a0~porta_we_reg       ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; memoria_principal:memoria|altsyncram:altsyncram_component|altsyncram_d8f1:auto_generated|ram_block1a1~porta_memory_reg0  ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; memoria_principal:memoria|altsyncram:altsyncram_component|altsyncram_d8f1:auto_generated|ram_block1a1~porta_memory_reg0  ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; memoria_principal:memoria|altsyncram:altsyncram_component|altsyncram_d8f1:auto_generated|ram_block1a2~porta_memory_reg0  ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; memoria_principal:memoria|altsyncram:altsyncram_component|altsyncram_d8f1:auto_generated|ram_block1a2~porta_memory_reg0  ;
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clock ; Rise       ; clock                                                                                                                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; data_retorno[0]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; data_retorno[0]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; data_retorno[1]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; data_retorno[1]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; data_retorno[2]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; data_retorno[2]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; data_saida[0]                                                                                                            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; data_saida[0]                                                                                                            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; data_saida[1]                                                                                                            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; data_saida[1]                                                                                                            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; data_saida[2]                                                                                                            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; data_saida[2]                                                                                                            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; hit                                                                                                                      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; hit                                                                                                                      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; sub_address_mem[0]                                                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; sub_address_mem[0]                                                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; sub_address_mem[1]                                                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; sub_address_mem[1]                                                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; sub_address_mem[2]                                                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; sub_address_mem[2]                                                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; sub_address_mem[3]                                                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; sub_address_mem[3]                                                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; sub_address_writeback_mem[2]                                                                                             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; sub_address_writeback_mem[2]                                                                                             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; sub_address_writeback_mem[3]                                                                                             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; sub_address_writeback_mem[3]                                                                                             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; sub_data_mem[0]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; sub_data_mem[0]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; sub_data_mem[1]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; sub_data_mem[1]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; sub_data_mem[2]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; sub_data_mem[2]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; sub_data_writeback_mem[0]                                                                                                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; sub_data_writeback_mem[0]                                                                                                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; sub_data_writeback_mem[1]                                                                                                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; sub_data_writeback_mem[1]                                                                                                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; sub_data_writeback_mem[2]                                                                                                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; sub_data_writeback_mem[2]                                                                                                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; sub_wren                                                                                                                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; sub_wren                                                                                                                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; valido                                                                                                                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; valido                                                                                                                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; via1[0]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; via1[0]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; via1[1]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; via1[1]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; via1[2]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; via1[2]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; via1[3]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; via1[3]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; via1[4]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; via1[4]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; via1[5]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; via1[5]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; via1[6]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; via1[6]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; via1[7]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; via1[7]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; via1[8]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; via1[8]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; via2[0]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; via2[0]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; via2[1]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; via2[1]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; via2[2]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; via2[2]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; via2[3]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; via2[3]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; via2[4]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; via2[4]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; via2[5]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; via2[5]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; via2[6]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; via2[6]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; via2[7]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; via2[7]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; via[0][0][0]                                                                                                             ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------+
+; Setup Times                                                               ;
++-------------+------------+--------+--------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-------------+------------+--------+--------+------------+-----------------+
+; address[*]  ; clock      ; 19.235 ; 19.235 ; Fall       ; clock           ;
+;  address[0] ; clock      ; 15.175 ; 15.175 ; Fall       ; clock           ;
+;  address[1] ; clock      ; 15.531 ; 15.531 ; Fall       ; clock           ;
+;  address[2] ; clock      ; 19.235 ; 19.235 ; Fall       ; clock           ;
+;  address[3] ; clock      ; 18.788 ; 18.788 ; Fall       ; clock           ;
+;  address[4] ; clock      ; 18.873 ; 18.873 ; Fall       ; clock           ;
+; data[*]     ; clock      ; 9.206  ; 9.206  ; Fall       ; clock           ;
+;  data[0]    ; clock      ; 8.213  ; 8.213  ; Fall       ; clock           ;
+;  data[1]    ; clock      ; 8.843  ; 8.843  ; Fall       ; clock           ;
+;  data[2]    ; clock      ; 9.206  ; 9.206  ; Fall       ; clock           ;
+; wren        ; clock      ; 16.978 ; 16.978 ; Fall       ; clock           ;
++-------------+------------+--------+--------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Hold Times                                                                ;
++-------------+------------+--------+--------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-------------+------------+--------+--------+------------+-----------------+
+; address[*]  ; clock      ; 0.793  ; 0.793  ; Fall       ; clock           ;
+;  address[0] ; clock      ; 0.707  ; 0.707  ; Fall       ; clock           ;
+;  address[1] ; clock      ; 0.793  ; 0.793  ; Fall       ; clock           ;
+;  address[2] ; clock      ; -3.796 ; -3.796 ; Fall       ; clock           ;
+;  address[3] ; clock      ; -3.365 ; -3.365 ; Fall       ; clock           ;
+;  address[4] ; clock      ; -3.689 ; -3.689 ; Fall       ; clock           ;
+; data[*]     ; clock      ; -3.253 ; -3.253 ; Fall       ; clock           ;
+;  data[0]    ; clock      ; -3.295 ; -3.295 ; Fall       ; clock           ;
+;  data[1]    ; clock      ; -3.253 ; -3.253 ; Fall       ; clock           ;
+;  data[2]    ; clock      ; -3.638 ; -3.638 ; Fall       ; clock           ;
+; wren        ; clock      ; -3.738 ; -3.738 ; Fall       ; clock           ;
++-------------+------------+--------+--------+------------+-----------------+
+
+
++---------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                 ;
++---------------------------+------------+-------+-------+------------+-----------------+
+; Data Port                 ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++---------------------------+------------+-------+-------+------------+-----------------+
+; address_writeback_mem[*]  ; clock      ; 7.231 ; 7.231 ; Fall       ; clock           ;
+;  address_writeback_mem[2] ; clock      ; 6.432 ; 6.432 ; Fall       ; clock           ;
+;  address_writeback_mem[3] ; clock      ; 7.231 ; 7.231 ; Fall       ; clock           ;
+; data_writeback_mem[*]     ; clock      ; 6.941 ; 6.941 ; Fall       ; clock           ;
+;  data_writeback_mem[0]    ; clock      ; 6.470 ; 6.470 ; Fall       ; clock           ;
+;  data_writeback_mem[1]    ; clock      ; 6.489 ; 6.489 ; Fall       ; clock           ;
+;  data_writeback_mem[2]    ; clock      ; 6.941 ; 6.941 ; Fall       ; clock           ;
+; hit_saida                 ; clock      ; 6.931 ; 6.931 ; Fall       ; clock           ;
+; q[*]                      ; clock      ; 6.927 ; 6.927 ; Fall       ; clock           ;
+;  q[0]                     ; clock      ; 6.689 ; 6.689 ; Fall       ; clock           ;
+;  q[1]                     ; clock      ; 6.444 ; 6.444 ; Fall       ; clock           ;
+;  q[2]                     ; clock      ; 6.927 ; 6.927 ; Fall       ; clock           ;
+; saida_via1[*]             ; clock      ; 6.942 ; 6.942 ; Fall       ; clock           ;
+;  saida_via1[0]            ; clock      ; 6.674 ; 6.674 ; Fall       ; clock           ;
+;  saida_via1[1]            ; clock      ; 6.911 ; 6.911 ; Fall       ; clock           ;
+;  saida_via1[2]            ; clock      ; 6.436 ; 6.436 ; Fall       ; clock           ;
+;  saida_via1[3]            ; clock      ; 6.868 ; 6.868 ; Fall       ; clock           ;
+;  saida_via1[4]            ; clock      ; 6.673 ; 6.673 ; Fall       ; clock           ;
+;  saida_via1[5]            ; clock      ; 6.652 ; 6.652 ; Fall       ; clock           ;
+;  saida_via1[6]            ; clock      ; 6.912 ; 6.912 ; Fall       ; clock           ;
+;  saida_via1[7]            ; clock      ; 6.692 ; 6.692 ; Fall       ; clock           ;
+;  saida_via1[8]            ; clock      ; 6.942 ; 6.942 ; Fall       ; clock           ;
+; saida_via2[*]             ; clock      ; 7.417 ; 7.417 ; Fall       ; clock           ;
+;  saida_via2[0]            ; clock      ; 6.924 ; 6.924 ; Fall       ; clock           ;
+;  saida_via2[1]            ; clock      ; 7.165 ; 7.165 ; Fall       ; clock           ;
+;  saida_via2[2]            ; clock      ; 7.193 ; 7.193 ; Fall       ; clock           ;
+;  saida_via2[3]            ; clock      ; 7.417 ; 7.417 ; Fall       ; clock           ;
+;  saida_via2[4]            ; clock      ; 6.992 ; 6.992 ; Fall       ; clock           ;
+;  saida_via2[5]            ; clock      ; 7.174 ; 7.174 ; Fall       ; clock           ;
+;  saida_via2[6]            ; clock      ; 6.673 ; 6.673 ; Fall       ; clock           ;
+;  saida_via2[7]            ; clock      ; 6.687 ; 6.687 ; Fall       ; clock           ;
++---------------------------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                         ;
++---------------------------+------------+-------+-------+------------+-----------------+
+; Data Port                 ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++---------------------------+------------+-------+-------+------------+-----------------+
+; address_writeback_mem[*]  ; clock      ; 6.432 ; 6.432 ; Fall       ; clock           ;
+;  address_writeback_mem[2] ; clock      ; 6.432 ; 6.432 ; Fall       ; clock           ;
+;  address_writeback_mem[3] ; clock      ; 7.231 ; 7.231 ; Fall       ; clock           ;
+; data_writeback_mem[*]     ; clock      ; 6.470 ; 6.470 ; Fall       ; clock           ;
+;  data_writeback_mem[0]    ; clock      ; 6.470 ; 6.470 ; Fall       ; clock           ;
+;  data_writeback_mem[1]    ; clock      ; 6.489 ; 6.489 ; Fall       ; clock           ;
+;  data_writeback_mem[2]    ; clock      ; 6.941 ; 6.941 ; Fall       ; clock           ;
+; hit_saida                 ; clock      ; 6.931 ; 6.931 ; Fall       ; clock           ;
+; q[*]                      ; clock      ; 6.444 ; 6.444 ; Fall       ; clock           ;
+;  q[0]                     ; clock      ; 6.689 ; 6.689 ; Fall       ; clock           ;
+;  q[1]                     ; clock      ; 6.444 ; 6.444 ; Fall       ; clock           ;
+;  q[2]                     ; clock      ; 6.927 ; 6.927 ; Fall       ; clock           ;
+; saida_via1[*]             ; clock      ; 6.436 ; 6.436 ; Fall       ; clock           ;
+;  saida_via1[0]            ; clock      ; 6.674 ; 6.674 ; Fall       ; clock           ;
+;  saida_via1[1]            ; clock      ; 6.911 ; 6.911 ; Fall       ; clock           ;
+;  saida_via1[2]            ; clock      ; 6.436 ; 6.436 ; Fall       ; clock           ;
+;  saida_via1[3]            ; clock      ; 6.868 ; 6.868 ; Fall       ; clock           ;
+;  saida_via1[4]            ; clock      ; 6.673 ; 6.673 ; Fall       ; clock           ;
+;  saida_via1[5]            ; clock      ; 6.652 ; 6.652 ; Fall       ; clock           ;
+;  saida_via1[6]            ; clock      ; 6.912 ; 6.912 ; Fall       ; clock           ;
+;  saida_via1[7]            ; clock      ; 6.692 ; 6.692 ; Fall       ; clock           ;
+;  saida_via1[8]            ; clock      ; 6.942 ; 6.942 ; Fall       ; clock           ;
+; saida_via2[*]             ; clock      ; 6.673 ; 6.673 ; Fall       ; clock           ;
+;  saida_via2[0]            ; clock      ; 6.924 ; 6.924 ; Fall       ; clock           ;
+;  saida_via2[1]            ; clock      ; 7.165 ; 7.165 ; Fall       ; clock           ;
+;  saida_via2[2]            ; clock      ; 7.193 ; 7.193 ; Fall       ; clock           ;
+;  saida_via2[3]            ; clock      ; 7.417 ; 7.417 ; Fall       ; clock           ;
+;  saida_via2[4]            ; clock      ; 6.992 ; 6.992 ; Fall       ; clock           ;
+;  saida_via2[5]            ; clock      ; 7.174 ; 7.174 ; Fall       ; clock           ;
+;  saida_via2[6]            ; clock      ; 6.673 ; 6.673 ; Fall       ; clock           ;
+;  saida_via2[7]            ; clock      ; 6.687 ; 6.687 ; Fall       ; clock           ;
++---------------------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------+
+; Fast Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clock ; -5.981 ; -407.267      ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Fast Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clock ; 0.215 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clock ; -2.000 ; -148.380              ;
++-------+--------+-----------------------+
+
+
++------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clock'                                                                                        ;
++--------+--------------+--------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node    ; To Node            ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+--------------+--------------------+--------------+-------------+--------------+------------+------------+
+; -5.981 ; via[0][2][4] ; sub_address_mem[0] ; clock        ; clock       ; 1.000        ; -0.038     ; 6.975      ;
+; -5.975 ; via[0][2][4] ; sub_address_mem[1] ; clock        ; clock       ; 1.000        ; -0.038     ; 6.969      ;
+; -5.936 ; via[1][0][4] ; sub_address_mem[0] ; clock        ; clock       ; 1.000        ; -0.024     ; 6.944      ;
+; -5.935 ; via[0][2][3] ; sub_address_mem[0] ; clock        ; clock       ; 1.000        ; -0.038     ; 6.929      ;
+; -5.930 ; via[1][0][4] ; sub_address_mem[1] ; clock        ; clock       ; 1.000        ; -0.024     ; 6.938      ;
+; -5.929 ; via[0][2][3] ; sub_address_mem[1] ; clock        ; clock       ; 1.000        ; -0.038     ; 6.923      ;
+; -5.916 ; via[1][0][4] ; sub_address_mem[3] ; clock        ; clock       ; 1.000        ; 0.014      ; 6.962      ;
+; -5.908 ; via[0][0][3] ; sub_address_mem[0] ; clock        ; clock       ; 1.000        ; -0.038     ; 6.902      ;
+; -5.902 ; via[0][3][4] ; sub_address_mem[0] ; clock        ; clock       ; 1.000        ; -0.050     ; 6.884      ;
+; -5.902 ; via[0][0][3] ; sub_address_mem[1] ; clock        ; clock       ; 1.000        ; -0.038     ; 6.896      ;
+; -5.896 ; via[0][3][4] ; sub_address_mem[1] ; clock        ; clock       ; 1.000        ; -0.050     ; 6.878      ;
+; -5.881 ; via[1][0][4] ; sub_address_mem[2] ; clock        ; clock       ; 1.000        ; 0.014      ; 6.927      ;
+; -5.880 ; via[0][2][5] ; sub_address_mem[0] ; clock        ; clock       ; 1.000        ; -0.038     ; 6.874      ;
+; -5.880 ; via[1][0][3] ; sub_address_mem[0] ; clock        ; clock       ; 1.000        ; -0.024     ; 6.888      ;
+; -5.874 ; via[0][2][5] ; sub_address_mem[1] ; clock        ; clock       ; 1.000        ; -0.038     ; 6.868      ;
+; -5.874 ; via[1][0][3] ; sub_address_mem[1] ; clock        ; clock       ; 1.000        ; -0.024     ; 6.882      ;
+; -5.872 ; via[0][2][4] ; sub_address_mem[3] ; clock        ; clock       ; 1.000        ; 0.000      ; 6.904      ;
+; -5.865 ; via[0][2][4] ; sub_address_mem[2] ; clock        ; clock       ; 1.000        ; 0.000      ; 6.897      ;
+; -5.860 ; via[1][0][3] ; sub_address_mem[3] ; clock        ; clock       ; 1.000        ; 0.014      ; 6.906      ;
+; -5.860 ; via[0][3][3] ; sub_address_mem[0] ; clock        ; clock       ; 1.000        ; -0.050     ; 6.842      ;
+; -5.854 ; via[0][3][3] ; sub_address_mem[1] ; clock        ; clock       ; 1.000        ; -0.050     ; 6.836      ;
+; -5.851 ; via[0][0][4] ; sub_address_mem[0] ; clock        ; clock       ; 1.000        ; -0.038     ; 6.845      ;
+; -5.845 ; via[0][0][4] ; sub_address_mem[1] ; clock        ; clock       ; 1.000        ; -0.038     ; 6.839      ;
+; -5.840 ; via[0][0][3] ; sub_address_mem[2] ; clock        ; clock       ; 1.000        ; 0.000      ; 6.872      ;
+; -5.826 ; via[0][2][3] ; sub_address_mem[3] ; clock        ; clock       ; 1.000        ; 0.000      ; 6.858      ;
+; -5.825 ; via[1][0][3] ; sub_address_mem[2] ; clock        ; clock       ; 1.000        ; 0.014      ; 6.871      ;
+; -5.823 ; via[0][1][4] ; sub_address_mem[3] ; clock        ; clock       ; 1.000        ; 0.014      ; 6.869      ;
+; -5.819 ; via[0][2][3] ; sub_address_mem[2] ; clock        ; clock       ; 1.000        ; 0.000      ; 6.851      ;
+; -5.799 ; via[0][0][3] ; sub_address_mem[3] ; clock        ; clock       ; 1.000        ; 0.000      ; 6.831      ;
+; -5.793 ; via[0][3][5] ; sub_address_mem[0] ; clock        ; clock       ; 1.000        ; -0.050     ; 6.775      ;
+; -5.793 ; via[0][3][4] ; sub_address_mem[3] ; clock        ; clock       ; 1.000        ; -0.012     ; 6.813      ;
+; -5.790 ; via[1][0][5] ; sub_address_mem[0] ; clock        ; clock       ; 1.000        ; -0.024     ; 6.798      ;
+; -5.788 ; via[0][1][4] ; sub_address_mem[2] ; clock        ; clock       ; 1.000        ; 0.014      ; 6.834      ;
+; -5.787 ; via[0][3][5] ; sub_address_mem[1] ; clock        ; clock       ; 1.000        ; -0.050     ; 6.769      ;
+; -5.786 ; via[0][3][4] ; sub_address_mem[2] ; clock        ; clock       ; 1.000        ; -0.012     ; 6.806      ;
+; -5.784 ; via[1][0][5] ; sub_address_mem[1] ; clock        ; clock       ; 1.000        ; -0.024     ; 6.792      ;
+; -5.783 ; via[0][0][4] ; sub_address_mem[2] ; clock        ; clock       ; 1.000        ; 0.000      ; 6.815      ;
+; -5.781 ; via[0][2][4] ; data_saida[2]      ; clock        ; clock       ; 1.000        ; 0.009      ; 6.822      ;
+; -5.772 ; via[0][1][4] ; sub_address_mem[0] ; clock        ; clock       ; 1.000        ; -0.024     ; 6.780      ;
+; -5.771 ; via[1][0][4] ; sub_data_mem[2]    ; clock        ; clock       ; 1.000        ; 0.014      ; 6.817      ;
+; -5.771 ; via[0][2][5] ; sub_address_mem[3] ; clock        ; clock       ; 1.000        ; 0.000      ; 6.803      ;
+; -5.770 ; via[1][0][5] ; sub_address_mem[3] ; clock        ; clock       ; 1.000        ; 0.014      ; 6.816      ;
+; -5.766 ; via[0][1][4] ; sub_address_mem[1] ; clock        ; clock       ; 1.000        ; -0.024     ; 6.774      ;
+; -5.764 ; via[0][2][5] ; sub_address_mem[2] ; clock        ; clock       ; 1.000        ; 0.000      ; 6.796      ;
+; -5.758 ; via[0][2][4] ; sub_wren           ; clock        ; clock       ; 1.000        ; -0.038     ; 6.752      ;
+; -5.756 ; via[0][2][4] ; data_saida[1]      ; clock        ; clock       ; 1.000        ; 0.009      ; 6.797      ;
+; -5.753 ; via[0][0][5] ; sub_address_mem[0] ; clock        ; clock       ; 1.000        ; -0.032     ; 6.753      ;
+; -5.751 ; via[0][3][3] ; sub_address_mem[3] ; clock        ; clock       ; 1.000        ; -0.012     ; 6.771      ;
+; -5.748 ; via[1][0][4] ; sub_data_mem[1]    ; clock        ; clock       ; 1.000        ; 0.002      ; 6.782      ;
+; -5.747 ; via[0][0][5] ; sub_address_mem[1] ; clock        ; clock       ; 1.000        ; -0.032     ; 6.747      ;
+; -5.744 ; via[0][3][3] ; sub_address_mem[2] ; clock        ; clock       ; 1.000        ; -0.012     ; 6.764      ;
+; -5.743 ; via[0][2][4] ; data_saida[0]      ; clock        ; clock       ; 1.000        ; 0.009      ; 6.784      ;
+; -5.742 ; via[0][0][4] ; sub_address_mem[3] ; clock        ; clock       ; 1.000        ; 0.000      ; 6.774      ;
+; -5.741 ; via[1][0][4] ; sub_data_mem[0]    ; clock        ; clock       ; 1.000        ; 0.014      ; 6.787      ;
+; -5.736 ; via[1][0][4] ; data_saida[2]      ; clock        ; clock       ; 1.000        ; 0.023      ; 6.791      ;
+; -5.735 ; via[1][0][5] ; sub_address_mem[2] ; clock        ; clock       ; 1.000        ; 0.014      ; 6.781      ;
+; -5.735 ; via[0][2][3] ; data_saida[2]      ; clock        ; clock       ; 1.000        ; 0.009      ; 6.776      ;
+; -5.733 ; via[0][0][8] ; sub_address_mem[0] ; clock        ; clock       ; 1.000        ; -0.044     ; 6.721      ;
+; -5.727 ; via[0][0][8] ; sub_address_mem[1] ; clock        ; clock       ; 1.000        ; -0.044     ; 6.715      ;
+; -5.715 ; via[1][0][3] ; sub_data_mem[2]    ; clock        ; clock       ; 1.000        ; 0.014      ; 6.761      ;
+; -5.713 ; via[1][0][4] ; sub_wren           ; clock        ; clock       ; 1.000        ; -0.024     ; 6.721      ;
+; -5.712 ; via[0][2][3] ; sub_wren           ; clock        ; clock       ; 1.000        ; -0.038     ; 6.706      ;
+; -5.711 ; via[1][0][4] ; data_saida[1]      ; clock        ; clock       ; 1.000        ; 0.023      ; 6.766      ;
+; -5.710 ; via[0][2][3] ; data_saida[1]      ; clock        ; clock       ; 1.000        ; 0.009      ; 6.751      ;
+; -5.708 ; via[0][0][3] ; data_saida[2]      ; clock        ; clock       ; 1.000        ; 0.009      ; 6.749      ;
+; -5.703 ; via[0][1][3] ; sub_address_mem[3] ; clock        ; clock       ; 1.000        ; 0.014      ; 6.749      ;
+; -5.702 ; via[0][3][4] ; data_saida[2]      ; clock        ; clock       ; 1.000        ; -0.003     ; 6.731      ;
+; -5.698 ; via[1][0][4] ; data_saida[0]      ; clock        ; clock       ; 1.000        ; 0.023      ; 6.753      ;
+; -5.697 ; via[0][2][3] ; data_saida[0]      ; clock        ; clock       ; 1.000        ; 0.009      ; 6.738      ;
+; -5.692 ; via[1][0][3] ; sub_data_mem[1]    ; clock        ; clock       ; 1.000        ; 0.002      ; 6.726      ;
+; -5.687 ; via[0][2][4] ; sub_data_mem[2]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.719      ;
+; -5.685 ; via[0][0][5] ; sub_address_mem[2] ; clock        ; clock       ; 1.000        ; 0.006      ; 6.723      ;
+; -5.685 ; via[1][0][3] ; sub_data_mem[0]    ; clock        ; clock       ; 1.000        ; 0.014      ; 6.731      ;
+; -5.685 ; via[0][0][3] ; sub_wren           ; clock        ; clock       ; 1.000        ; -0.038     ; 6.679      ;
+; -5.684 ; via[0][3][5] ; sub_address_mem[3] ; clock        ; clock       ; 1.000        ; -0.012     ; 6.704      ;
+; -5.683 ; via[0][0][3] ; data_saida[1]      ; clock        ; clock       ; 1.000        ; 0.009      ; 6.724      ;
+; -5.680 ; via[0][2][5] ; data_saida[2]      ; clock        ; clock       ; 1.000        ; 0.009      ; 6.721      ;
+; -5.680 ; via[1][0][3] ; data_saida[2]      ; clock        ; clock       ; 1.000        ; 0.023      ; 6.735      ;
+; -5.679 ; via[0][3][4] ; sub_wren           ; clock        ; clock       ; 1.000        ; -0.050     ; 6.661      ;
+; -5.679 ; via[0][2][4] ; sub_data_mem[0]    ; clock        ; clock       ; 1.000        ; 0.000      ; 6.711      ;
+; -5.678 ; via[0][1][4] ; sub_data_mem[2]    ; clock        ; clock       ; 1.000        ; 0.014      ; 6.724      ;
+; -5.677 ; via[0][3][5] ; sub_address_mem[2] ; clock        ; clock       ; 1.000        ; -0.012     ; 6.697      ;
+; -5.677 ; via[0][3][4] ; data_saida[1]      ; clock        ; clock       ; 1.000        ; -0.003     ; 6.706      ;
+; -5.670 ; via[0][0][3] ; data_saida[0]      ; clock        ; clock       ; 1.000        ; 0.009      ; 6.711      ;
+; -5.668 ; via[0][1][3] ; sub_address_mem[2] ; clock        ; clock       ; 1.000        ; 0.014      ; 6.714      ;
+; -5.665 ; via[0][0][8] ; sub_address_mem[2] ; clock        ; clock       ; 1.000        ; -0.006     ; 6.691      ;
+; -5.664 ; via[0][3][4] ; data_saida[0]      ; clock        ; clock       ; 1.000        ; -0.003     ; 6.693      ;
+; -5.660 ; via[0][3][3] ; data_saida[2]      ; clock        ; clock       ; 1.000        ; -0.003     ; 6.689      ;
+; -5.657 ; via[0][2][5] ; sub_wren           ; clock        ; clock       ; 1.000        ; -0.038     ; 6.651      ;
+; -5.657 ; via[1][0][3] ; sub_wren           ; clock        ; clock       ; 1.000        ; -0.024     ; 6.665      ;
+; -5.655 ; via[0][2][5] ; data_saida[1]      ; clock        ; clock       ; 1.000        ; 0.009      ; 6.696      ;
+; -5.655 ; via[0][1][4] ; sub_data_mem[1]    ; clock        ; clock       ; 1.000        ; 0.002      ; 6.689      ;
+; -5.655 ; via[1][0][3] ; data_saida[1]      ; clock        ; clock       ; 1.000        ; 0.023      ; 6.710      ;
+; -5.652 ; via[0][1][3] ; sub_address_mem[0] ; clock        ; clock       ; 1.000        ; -0.024     ; 6.660      ;
+; -5.651 ; via[0][1][5] ; sub_address_mem[3] ; clock        ; clock       ; 1.000        ; 0.014      ; 6.697      ;
+; -5.651 ; via[0][0][4] ; data_saida[2]      ; clock        ; clock       ; 1.000        ; 0.009      ; 6.692      ;
+; -5.649 ; via[0][2][4] ; sub_data_mem[1]    ; clock        ; clock       ; 1.000        ; -0.012     ; 6.669      ;
+; -5.648 ; via[0][1][4] ; sub_data_mem[0]    ; clock        ; clock       ; 1.000        ; 0.014      ; 6.694      ;
+; -5.646 ; via[0][1][3] ; sub_address_mem[1] ; clock        ; clock       ; 1.000        ; -0.024     ; 6.654      ;
+; -5.644 ; via[0][0][5] ; sub_address_mem[3] ; clock        ; clock       ; 1.000        ; 0.006      ; 6.682      ;
++--------+--------------+--------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clock'                                                                                                                                                                                                ;
++-------+-----------------+-------------------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node       ; To Node                                                                                                                 ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------+-------------------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; via[0][1][4]    ; via[0][1][4]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; via[0][1][5]    ; via[0][1][5]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; via[0][2][5]    ; via[0][2][5]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; via[0][2][7]    ; via[0][2][7]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; via[1][2][7]    ; via[1][2][7]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; via[0][2][3]    ; via[0][2][3]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; via[0][2][4]    ; via[0][2][4]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; via[0][3][3]    ; via[0][3][3]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; via[0][3][4]    ; via[0][3][4]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; via[1][3][7]    ; via[1][3][7]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; via[0][3][5]    ; via[0][3][5]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; via[0][0][5]    ; via[0][0][5]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; via[1][0][7]    ; via[1][0][7]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; via[1][0][5]    ; via[1][0][5]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; via[1][0][3]    ; via[1][0][3]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; via[1][0][4]    ; via[1][0][4]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; via[0][0][3]    ; via[0][0][3]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; via[0][0][4]    ; via[0][0][4]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; via[1][1][7]    ; via[1][1][7]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; via[0][1][3]    ; via[0][1][3]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; via[0][0][8]    ; via[0][0][8]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; via[1][2][5]    ; via[1][2][5]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; via[1][2][4]    ; via[1][2][4]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; via[1][2][3]    ; via[1][2][3]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; via[1][3][3]    ; via[1][3][3]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; via[1][3][5]    ; via[1][3][5]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; via[1][3][4]    ; via[1][3][4]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; via[0][3][6]    ; via[0][3][6]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; via[1][1][6]    ; via[1][1][6]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; via[1][1][4]    ; via[1][1][4]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; via[1][1][5]    ; via[1][1][5]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; via[1][1][3]    ; via[1][1][3]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.367      ;
+; 0.342 ; via[0][1][7]    ; via[0][1][7]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.494      ;
+; 0.357 ; via[0][0][8]    ; via1[8]                                                                                                                 ; clock        ; clock       ; 0.000        ; 0.000      ; 0.509      ;
+; 0.376 ; via[0][1][2]    ; sub_data_writeback_mem[2]                                                                                               ; clock        ; clock       ; 0.000        ; 0.000      ; 0.528      ;
+; 0.421 ; via[0][0][7]    ; via[0][0][7]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.573      ;
+; 0.422 ; via[0][3][1]    ; via[0][3][1]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.574      ;
+; 0.456 ; via[0][0][1]    ; via[0][0][1]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.608      ;
+; 0.463 ; via[0][3][0]    ; via[0][3][0]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.615      ;
+; 0.481 ; via[0][0][6]    ; via[0][0][6]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.633      ;
+; 0.531 ; data_retorno[2] ; data_retorno[2]                                                                                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.683      ;
+; 0.538 ; via[0][1][0]    ; via[0][1][0]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.690      ;
+; 0.541 ; via[0][0][3]    ; sub_address_mem[2]                                                                                                      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.693      ;
+; 0.547 ; via[0][2][6]    ; via[0][2][6]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.699      ;
+; 0.574 ; via[1][0][1]    ; data_saida[1]                                                                                                           ; clock        ; clock       ; 0.000        ; 0.009      ; 0.735      ;
+; 0.586 ; via[0][0][4]    ; sub_address_mem[3]                                                                                                      ; clock        ; clock       ; 0.000        ; 0.000      ; 0.738      ;
+; 0.591 ; data_retorno[0] ; data_retorno[0]                                                                                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.743      ;
+; 0.593 ; via[0][1][0]    ; sub_data_writeback_mem[0]                                                                                               ; clock        ; clock       ; 0.000        ; 0.014      ; 0.759      ;
+; 0.610 ; via[1][1][4]    ; sub_address_writeback_mem[3]                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.762      ;
+; 0.612 ; via[1][1][3]    ; sub_address_writeback_mem[2]                                                                                            ; clock        ; clock       ; 0.000        ; 0.024      ; 0.788      ;
+; 0.618 ; via[0][2][2]    ; via[0][2][2]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.770      ;
+; 0.619 ; via[0][1][1]    ; via[0][1][1]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.771      ;
+; 0.620 ; via[0][2][1]    ; via[0][2][1]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.772      ;
+; 0.623 ; via[1][3][6]    ; via[1][3][6]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.775      ;
+; 0.623 ; via[0][2][0]    ; via[0][2][0]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.775      ;
+; 0.625 ; via[0][3][6]    ; via1[6]                                                                                                                 ; clock        ; clock       ; 0.000        ; -0.003     ; 0.774      ;
+; 0.635 ; via[0][1][4]    ; sub_address_writeback_mem[3]                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.787      ;
+; 0.645 ; via[0][1][1]    ; sub_data_writeback_mem[1]                                                                                               ; clock        ; clock       ; 0.000        ; 0.014      ; 0.811      ;
+; 0.659 ; via[1][0][6]    ; via[1][0][6]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.811      ;
+; 0.662 ; data_retorno[1] ; data_retorno[1]                                                                                                         ; clock        ; clock       ; 0.000        ; 0.000      ; 0.814      ;
+; 0.676 ; via[1][0][0]    ; data_saida[0]                                                                                                           ; clock        ; clock       ; 0.000        ; 0.009      ; 0.837      ;
+; 0.689 ; via[1][1][2]    ; via[1][1][2]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.841      ;
+; 0.695 ; via[0][0][0]    ; sub_data_mem[0]                                                                                                         ; clock        ; clock       ; 0.000        ; -0.004     ; 0.843      ;
+; 0.697 ; via[0][0][0]    ; data_saida[0]                                                                                                           ; clock        ; clock       ; 0.000        ; 0.005      ; 0.854      ;
+; 0.704 ; via[1][1][1]    ; sub_data_writeback_mem[1]                                                                                               ; clock        ; clock       ; 0.000        ; 0.009      ; 0.865      ;
+; 0.714 ; via[1][3][4]    ; via2[4]                                                                                                                 ; clock        ; clock       ; 0.000        ; 0.000      ; 0.866      ;
+; 0.727 ; via[0][1][3]    ; sub_address_writeback_mem[2]                                                                                            ; clock        ; clock       ; 0.000        ; 0.023      ; 0.902      ;
+; 0.729 ; via[0][0][1]    ; data_saida[1]                                                                                                           ; clock        ; clock       ; 0.000        ; 0.005      ; 0.886      ;
+; 0.737 ; via[0][0][0]    ; via[0][0][0]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.889      ;
+; 0.761 ; via[0][1][7]    ; via[0][1][6]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.913      ;
+; 0.761 ; via[0][1][0]    ; sub_data_mem[0]                                                                                                         ; clock        ; clock       ; 0.000        ; 0.005      ; 0.918      ;
+; 0.768 ; via[1][1][1]    ; via[1][1][1]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.920      ;
+; 0.774 ; via[0][3][7]    ; via[0][3][7]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.926      ;
+; 0.777 ; via[0][3][2]    ; via1[2]                                                                                                                 ; clock        ; clock       ; 0.000        ; 0.000      ; 0.929      ;
+; 0.805 ; via[1][3][3]    ; via[1][3][1]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.018      ; 0.975      ;
+; 0.806 ; via[1][3][3]    ; via[1][3][2]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.018      ; 0.976      ;
+; 0.825 ; via[0][1][3]    ; sub_address_mem[2]                                                                                                      ; clock        ; clock       ; 0.000        ; 0.014      ; 0.991      ;
+; 0.828 ; via[0][2][7]    ; via[1][2][7]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.980      ;
+; 0.829 ; via[0][0][2]    ; data_saida[2]                                                                                                           ; clock        ; clock       ; 0.000        ; 0.015      ; 0.996      ;
+; 0.842 ; data_retorno[0] ; data_saida[0]                                                                                                           ; clock        ; clock       ; 0.000        ; 0.009      ; 1.003      ;
+; 0.843 ; data_retorno[2] ; via[0][0][2]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 0.995      ;
+; 0.844 ; data_retorno[0] ; via[0][1][0]                                                                                                            ; clock        ; clock       ; 0.000        ; -0.005     ; 0.991      ;
+; 0.848 ; via[0][1][1]    ; sub_data_mem[1]                                                                                                         ; clock        ; clock       ; 0.000        ; -0.007     ; 0.993      ;
+; 0.853 ; via[1][0][2]    ; data_saida[2]                                                                                                           ; clock        ; clock       ; 0.000        ; 0.023      ; 1.028      ;
+; 0.855 ; via[1][2][6]    ; via[1][2][6]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 1.007      ;
+; 0.855 ; via[1][3][6]    ; via2[6]                                                                                                                 ; clock        ; clock       ; 0.000        ; -0.004     ; 1.003      ;
+; 0.869 ; via[1][0][0]    ; via[1][0][0]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 1.021      ;
+; 0.879 ; sub_data_mem[1] ; memoria_principal:memoria|altsyncram:altsyncram_component|altsyncram_d8f1:auto_generated|ram_block1a0~porta_datain_reg1 ; clock        ; clock       ; -0.500       ; 0.066      ; 0.583      ;
+; 0.893 ; via[0][2][5]    ; hit                                                                                                                     ; clock        ; clock       ; 0.000        ; 0.006      ; 1.051      ;
+; 0.893 ; via[0][1][2]    ; data_saida[2]                                                                                                           ; clock        ; clock       ; 0.000        ; 0.023      ; 1.068      ;
+; 0.899 ; via[1][3][7]    ; via1[7]                                                                                                                 ; clock        ; clock       ; 0.000        ; 0.000      ; 1.051      ;
+; 0.903 ; via[1][3][7]    ; via2[7]                                                                                                                 ; clock        ; clock       ; 0.000        ; 0.000      ; 1.055      ;
+; 0.903 ; via[1][1][2]    ; sub_data_writeback_mem[2]                                                                                               ; clock        ; clock       ; 0.000        ; -0.014     ; 1.041      ;
+; 0.905 ; via[1][2][2]    ; via[1][2][2]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 1.057      ;
+; 0.914 ; via[1][1][0]    ; sub_data_writeback_mem[0]                                                                                               ; clock        ; clock       ; 0.000        ; 0.009      ; 1.075      ;
+; 0.917 ; via[0][0][1]    ; sub_data_mem[1]                                                                                                         ; clock        ; clock       ; 0.000        ; -0.016     ; 1.053      ;
+; 0.921 ; via[1][2][1]    ; via[1][2][1]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 1.073      ;
+; 0.924 ; via[1][3][3]    ; via[1][3][0]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.018      ; 1.094      ;
+; 0.929 ; via[1][2][7]    ; via[0][2][7]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.000      ; 1.081      ;
+; 0.930 ; data_retorno[0] ; via[0][0][0]                                                                                                            ; clock        ; clock       ; 0.000        ; 0.004      ; 1.086      ;
++-------+-----------------+-------------------------------------------------------------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clock'                                                                                                                                                                   ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------------------------------------------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                                                                                                   ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------------------------------------------------------------------------------------------------+
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; memoria_principal:memoria|altsyncram:altsyncram_component|altsyncram_d8f1:auto_generated|ram_block1a0~porta_address_reg0 ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; memoria_principal:memoria|altsyncram:altsyncram_component|altsyncram_d8f1:auto_generated|ram_block1a0~porta_address_reg0 ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; memoria_principal:memoria|altsyncram:altsyncram_component|altsyncram_d8f1:auto_generated|ram_block1a0~porta_address_reg1 ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; memoria_principal:memoria|altsyncram:altsyncram_component|altsyncram_d8f1:auto_generated|ram_block1a0~porta_address_reg1 ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; memoria_principal:memoria|altsyncram:altsyncram_component|altsyncram_d8f1:auto_generated|ram_block1a0~porta_address_reg2 ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; memoria_principal:memoria|altsyncram:altsyncram_component|altsyncram_d8f1:auto_generated|ram_block1a0~porta_address_reg2 ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; memoria_principal:memoria|altsyncram:altsyncram_component|altsyncram_d8f1:auto_generated|ram_block1a0~porta_address_reg3 ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; memoria_principal:memoria|altsyncram:altsyncram_component|altsyncram_d8f1:auto_generated|ram_block1a0~porta_address_reg3 ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; memoria_principal:memoria|altsyncram:altsyncram_component|altsyncram_d8f1:auto_generated|ram_block1a0~porta_datain_reg0  ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; memoria_principal:memoria|altsyncram:altsyncram_component|altsyncram_d8f1:auto_generated|ram_block1a0~porta_datain_reg0  ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; memoria_principal:memoria|altsyncram:altsyncram_component|altsyncram_d8f1:auto_generated|ram_block1a0~porta_datain_reg1  ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; memoria_principal:memoria|altsyncram:altsyncram_component|altsyncram_d8f1:auto_generated|ram_block1a0~porta_datain_reg1  ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; memoria_principal:memoria|altsyncram:altsyncram_component|altsyncram_d8f1:auto_generated|ram_block1a0~porta_datain_reg2  ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; memoria_principal:memoria|altsyncram:altsyncram_component|altsyncram_d8f1:auto_generated|ram_block1a0~porta_datain_reg2  ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; memoria_principal:memoria|altsyncram:altsyncram_component|altsyncram_d8f1:auto_generated|ram_block1a0~porta_memory_reg0  ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; memoria_principal:memoria|altsyncram:altsyncram_component|altsyncram_d8f1:auto_generated|ram_block1a0~porta_memory_reg0  ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; memoria_principal:memoria|altsyncram:altsyncram_component|altsyncram_d8f1:auto_generated|ram_block1a0~porta_we_reg       ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; memoria_principal:memoria|altsyncram:altsyncram_component|altsyncram_d8f1:auto_generated|ram_block1a0~porta_we_reg       ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; memoria_principal:memoria|altsyncram:altsyncram_component|altsyncram_d8f1:auto_generated|ram_block1a1~porta_memory_reg0  ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; memoria_principal:memoria|altsyncram:altsyncram_component|altsyncram_d8f1:auto_generated|ram_block1a1~porta_memory_reg0  ;
+; -2.000 ; 0.500        ; 2.500          ; High Pulse Width ; clock ; Rise       ; memoria_principal:memoria|altsyncram:altsyncram_component|altsyncram_d8f1:auto_generated|ram_block1a2~porta_memory_reg0  ;
+; -2.000 ; 0.500        ; 2.500          ; Low Pulse Width  ; clock ; Rise       ; memoria_principal:memoria|altsyncram:altsyncram_component|altsyncram_d8f1:auto_generated|ram_block1a2~porta_memory_reg0  ;
+; -1.380 ; 1.000        ; 2.380          ; Port Rate        ; clock ; Rise       ; clock                                                                                                                    ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; data_retorno[0]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; data_retorno[0]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; data_retorno[1]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; data_retorno[1]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; data_retorno[2]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; data_retorno[2]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; data_saida[0]                                                                                                            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; data_saida[0]                                                                                                            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; data_saida[1]                                                                                                            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; data_saida[1]                                                                                                            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; data_saida[2]                                                                                                            ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; data_saida[2]                                                                                                            ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; hit                                                                                                                      ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; hit                                                                                                                      ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; sub_address_mem[0]                                                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; sub_address_mem[0]                                                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; sub_address_mem[1]                                                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; sub_address_mem[1]                                                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; sub_address_mem[2]                                                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; sub_address_mem[2]                                                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; sub_address_mem[3]                                                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; sub_address_mem[3]                                                                                                       ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; sub_address_writeback_mem[2]                                                                                             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; sub_address_writeback_mem[2]                                                                                             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; sub_address_writeback_mem[3]                                                                                             ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; sub_address_writeback_mem[3]                                                                                             ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; sub_data_mem[0]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; sub_data_mem[0]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; sub_data_mem[1]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; sub_data_mem[1]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; sub_data_mem[2]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; sub_data_mem[2]                                                                                                          ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; sub_data_writeback_mem[0]                                                                                                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; sub_data_writeback_mem[0]                                                                                                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; sub_data_writeback_mem[1]                                                                                                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; sub_data_writeback_mem[1]                                                                                                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; sub_data_writeback_mem[2]                                                                                                ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; sub_data_writeback_mem[2]                                                                                                ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; sub_wren                                                                                                                 ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; sub_wren                                                                                                                 ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; valido                                                                                                                   ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; valido                                                                                                                   ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; via1[0]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; via1[0]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; via1[1]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; via1[1]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; via1[2]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; via1[2]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; via1[3]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; via1[3]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; via1[4]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; via1[4]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; via1[5]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; via1[5]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; via1[6]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; via1[6]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; via1[7]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; via1[7]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; via1[8]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; via1[8]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; via2[0]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; via2[0]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; via2[1]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; via2[1]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; via2[2]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; via2[2]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; via2[3]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; via2[3]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; via2[4]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; via2[4]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; via2[5]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; via2[5]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; via2[6]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; via2[6]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; via2[7]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; Low Pulse Width  ; clock ; Fall       ; via2[7]                                                                                                                  ;
+; -0.500 ; 0.500        ; 1.000          ; High Pulse Width ; clock ; Fall       ; via[0][0][0]                                                                                                             ;
++--------+--------------+----------------+------------------+-------+------------+--------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------+
+; Setup Times                                                             ;
++-------------+------------+-------+-------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-------------+------------+-------+-------+------------+-----------------+
+; address[*]  ; clock      ; 8.906 ; 8.906 ; Fall       ; clock           ;
+;  address[0] ; clock      ; 6.511 ; 6.511 ; Fall       ; clock           ;
+;  address[1] ; clock      ; 6.609 ; 6.609 ; Fall       ; clock           ;
+;  address[2] ; clock      ; 8.906 ; 8.906 ; Fall       ; clock           ;
+;  address[3] ; clock      ; 8.722 ; 8.722 ; Fall       ; clock           ;
+;  address[4] ; clock      ; 8.805 ; 8.805 ; Fall       ; clock           ;
+; data[*]     ; clock      ; 4.293 ; 4.293 ; Fall       ; clock           ;
+;  data[0]    ; clock      ; 3.874 ; 3.874 ; Fall       ; clock           ;
+;  data[1]    ; clock      ; 4.136 ; 4.136 ; Fall       ; clock           ;
+;  data[2]    ; clock      ; 4.293 ; 4.293 ; Fall       ; clock           ;
+; wren        ; clock      ; 7.850 ; 7.850 ; Fall       ; clock           ;
++-------------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Hold Times                                                                ;
++-------------+------------+--------+--------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-------------+------------+--------+--------+------------+-----------------+
+; address[*]  ; clock      ; 0.725  ; 0.725  ; Fall       ; clock           ;
+;  address[0] ; clock      ; 0.682  ; 0.682  ; Fall       ; clock           ;
+;  address[1] ; clock      ; 0.725  ; 0.725  ; Fall       ; clock           ;
+;  address[2] ; clock      ; -2.061 ; -2.061 ; Fall       ; clock           ;
+;  address[3] ; clock      ; -1.832 ; -1.832 ; Fall       ; clock           ;
+;  address[4] ; clock      ; -1.978 ; -1.978 ; Fall       ; clock           ;
+; data[*]     ; clock      ; -1.750 ; -1.750 ; Fall       ; clock           ;
+;  data[0]    ; clock      ; -1.779 ; -1.779 ; Fall       ; clock           ;
+;  data[1]    ; clock      ; -1.750 ; -1.750 ; Fall       ; clock           ;
+;  data[2]    ; clock      ; -1.933 ; -1.933 ; Fall       ; clock           ;
+; wren        ; clock      ; -2.026 ; -2.026 ; Fall       ; clock           ;
++-------------+------------+--------+--------+------------+-----------------+
+
+
++---------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                 ;
++---------------------------+------------+-------+-------+------------+-----------------+
+; Data Port                 ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++---------------------------+------------+-------+-------+------------+-----------------+
+; address_writeback_mem[*]  ; clock      ; 4.061 ; 4.061 ; Fall       ; clock           ;
+;  address_writeback_mem[2] ; clock      ; 3.678 ; 3.678 ; Fall       ; clock           ;
+;  address_writeback_mem[3] ; clock      ; 4.061 ; 4.061 ; Fall       ; clock           ;
+; data_writeback_mem[*]     ; clock      ; 3.904 ; 3.904 ; Fall       ; clock           ;
+;  data_writeback_mem[0]    ; clock      ; 3.725 ; 3.725 ; Fall       ; clock           ;
+;  data_writeback_mem[1]    ; clock      ; 3.736 ; 3.736 ; Fall       ; clock           ;
+;  data_writeback_mem[2]    ; clock      ; 3.904 ; 3.904 ; Fall       ; clock           ;
+; hit_saida                 ; clock      ; 3.923 ; 3.923 ; Fall       ; clock           ;
+; q[*]                      ; clock      ; 3.920 ; 3.920 ; Fall       ; clock           ;
+;  q[0]                     ; clock      ; 3.809 ; 3.809 ; Fall       ; clock           ;
+;  q[1]                     ; clock      ; 3.703 ; 3.703 ; Fall       ; clock           ;
+;  q[2]                     ; clock      ; 3.920 ; 3.920 ; Fall       ; clock           ;
+; saida_via1[*]             ; clock      ; 3.929 ; 3.929 ; Fall       ; clock           ;
+;  saida_via1[0]            ; clock      ; 3.809 ; 3.809 ; Fall       ; clock           ;
+;  saida_via1[1]            ; clock      ; 3.906 ; 3.906 ; Fall       ; clock           ;
+;  saida_via1[2]            ; clock      ; 3.691 ; 3.691 ; Fall       ; clock           ;
+;  saida_via1[3]            ; clock      ; 3.875 ; 3.875 ; Fall       ; clock           ;
+;  saida_via1[4]            ; clock      ; 3.808 ; 3.808 ; Fall       ; clock           ;
+;  saida_via1[5]            ; clock      ; 3.779 ; 3.779 ; Fall       ; clock           ;
+;  saida_via1[6]            ; clock      ; 3.908 ; 3.908 ; Fall       ; clock           ;
+;  saida_via1[7]            ; clock      ; 3.806 ; 3.806 ; Fall       ; clock           ;
+;  saida_via1[8]            ; clock      ; 3.929 ; 3.929 ; Fall       ; clock           ;
+; saida_via2[*]             ; clock      ; 4.124 ; 4.124 ; Fall       ; clock           ;
+;  saida_via2[0]            ; clock      ; 3.919 ; 3.919 ; Fall       ; clock           ;
+;  saida_via2[1]            ; clock      ; 4.028 ; 4.028 ; Fall       ; clock           ;
+;  saida_via2[2]            ; clock      ; 4.040 ; 4.040 ; Fall       ; clock           ;
+;  saida_via2[3]            ; clock      ; 4.124 ; 4.124 ; Fall       ; clock           ;
+;  saida_via2[4]            ; clock      ; 3.939 ; 3.939 ; Fall       ; clock           ;
+;  saida_via2[5]            ; clock      ; 4.015 ; 4.015 ; Fall       ; clock           ;
+;  saida_via2[6]            ; clock      ; 3.794 ; 3.794 ; Fall       ; clock           ;
+;  saida_via2[7]            ; clock      ; 3.804 ; 3.804 ; Fall       ; clock           ;
++---------------------------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                         ;
++---------------------------+------------+-------+-------+------------+-----------------+
+; Data Port                 ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++---------------------------+------------+-------+-------+------------+-----------------+
+; address_writeback_mem[*]  ; clock      ; 3.678 ; 3.678 ; Fall       ; clock           ;
+;  address_writeback_mem[2] ; clock      ; 3.678 ; 3.678 ; Fall       ; clock           ;
+;  address_writeback_mem[3] ; clock      ; 4.061 ; 4.061 ; Fall       ; clock           ;
+; data_writeback_mem[*]     ; clock      ; 3.725 ; 3.725 ; Fall       ; clock           ;
+;  data_writeback_mem[0]    ; clock      ; 3.725 ; 3.725 ; Fall       ; clock           ;
+;  data_writeback_mem[1]    ; clock      ; 3.736 ; 3.736 ; Fall       ; clock           ;
+;  data_writeback_mem[2]    ; clock      ; 3.904 ; 3.904 ; Fall       ; clock           ;
+; hit_saida                 ; clock      ; 3.923 ; 3.923 ; Fall       ; clock           ;
+; q[*]                      ; clock      ; 3.703 ; 3.703 ; Fall       ; clock           ;
+;  q[0]                     ; clock      ; 3.809 ; 3.809 ; Fall       ; clock           ;
+;  q[1]                     ; clock      ; 3.703 ; 3.703 ; Fall       ; clock           ;
+;  q[2]                     ; clock      ; 3.920 ; 3.920 ; Fall       ; clock           ;
+; saida_via1[*]             ; clock      ; 3.691 ; 3.691 ; Fall       ; clock           ;
+;  saida_via1[0]            ; clock      ; 3.809 ; 3.809 ; Fall       ; clock           ;
+;  saida_via1[1]            ; clock      ; 3.906 ; 3.906 ; Fall       ; clock           ;
+;  saida_via1[2]            ; clock      ; 3.691 ; 3.691 ; Fall       ; clock           ;
+;  saida_via1[3]            ; clock      ; 3.875 ; 3.875 ; Fall       ; clock           ;
+;  saida_via1[4]            ; clock      ; 3.808 ; 3.808 ; Fall       ; clock           ;
+;  saida_via1[5]            ; clock      ; 3.779 ; 3.779 ; Fall       ; clock           ;
+;  saida_via1[6]            ; clock      ; 3.908 ; 3.908 ; Fall       ; clock           ;
+;  saida_via1[7]            ; clock      ; 3.806 ; 3.806 ; Fall       ; clock           ;
+;  saida_via1[8]            ; clock      ; 3.929 ; 3.929 ; Fall       ; clock           ;
+; saida_via2[*]             ; clock      ; 3.794 ; 3.794 ; Fall       ; clock           ;
+;  saida_via2[0]            ; clock      ; 3.919 ; 3.919 ; Fall       ; clock           ;
+;  saida_via2[1]            ; clock      ; 4.028 ; 4.028 ; Fall       ; clock           ;
+;  saida_via2[2]            ; clock      ; 4.040 ; 4.040 ; Fall       ; clock           ;
+;  saida_via2[3]            ; clock      ; 4.124 ; 4.124 ; Fall       ; clock           ;
+;  saida_via2[4]            ; clock      ; 3.939 ; 3.939 ; Fall       ; clock           ;
+;  saida_via2[5]            ; clock      ; 4.015 ; 4.015 ; Fall       ; clock           ;
+;  saida_via2[6]            ; clock      ; 3.794 ; 3.794 ; Fall       ; clock           ;
+;  saida_via2[7]            ; clock      ; 3.804 ; 3.804 ; Fall       ; clock           ;
++---------------------------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                             ;
++------------------+-----------+-------+----------+---------+---------------------+
+; Clock            ; Setup     ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+-----------+-------+----------+---------+---------------------+
+; Worst-case Slack ; -14.630   ; 0.215 ; N/A      ; N/A     ; -2.000              ;
+;  clock           ; -14.630   ; 0.215 ; N/A      ; N/A     ; -2.000              ;
+; Design-wide TNS  ; -1037.283 ; 0.0   ; 0.0      ; 0.0     ; -148.38             ;
+;  clock           ; -1037.283 ; 0.000 ; N/A      ; N/A     ; -148.380            ;
++------------------+-----------+-------+----------+---------+---------------------+
+
+
++---------------------------------------------------------------------------+
+; Setup Times                                                               ;
++-------------+------------+--------+--------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-------------+------------+--------+--------+------------+-----------------+
+; address[*]  ; clock      ; 19.235 ; 19.235 ; Fall       ; clock           ;
+;  address[0] ; clock      ; 15.175 ; 15.175 ; Fall       ; clock           ;
+;  address[1] ; clock      ; 15.531 ; 15.531 ; Fall       ; clock           ;
+;  address[2] ; clock      ; 19.235 ; 19.235 ; Fall       ; clock           ;
+;  address[3] ; clock      ; 18.788 ; 18.788 ; Fall       ; clock           ;
+;  address[4] ; clock      ; 18.873 ; 18.873 ; Fall       ; clock           ;
+; data[*]     ; clock      ; 9.206  ; 9.206  ; Fall       ; clock           ;
+;  data[0]    ; clock      ; 8.213  ; 8.213  ; Fall       ; clock           ;
+;  data[1]    ; clock      ; 8.843  ; 8.843  ; Fall       ; clock           ;
+;  data[2]    ; clock      ; 9.206  ; 9.206  ; Fall       ; clock           ;
+; wren        ; clock      ; 16.978 ; 16.978 ; Fall       ; clock           ;
++-------------+------------+--------+--------+------------+-----------------+
+
+
++---------------------------------------------------------------------------+
+; Hold Times                                                                ;
++-------------+------------+--------+--------+------------+-----------------+
+; Data Port   ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++-------------+------------+--------+--------+------------+-----------------+
+; address[*]  ; clock      ; 0.793  ; 0.793  ; Fall       ; clock           ;
+;  address[0] ; clock      ; 0.707  ; 0.707  ; Fall       ; clock           ;
+;  address[1] ; clock      ; 0.793  ; 0.793  ; Fall       ; clock           ;
+;  address[2] ; clock      ; -2.061 ; -2.061 ; Fall       ; clock           ;
+;  address[3] ; clock      ; -1.832 ; -1.832 ; Fall       ; clock           ;
+;  address[4] ; clock      ; -1.978 ; -1.978 ; Fall       ; clock           ;
+; data[*]     ; clock      ; -1.750 ; -1.750 ; Fall       ; clock           ;
+;  data[0]    ; clock      ; -1.779 ; -1.779 ; Fall       ; clock           ;
+;  data[1]    ; clock      ; -1.750 ; -1.750 ; Fall       ; clock           ;
+;  data[2]    ; clock      ; -1.933 ; -1.933 ; Fall       ; clock           ;
+; wren        ; clock      ; -2.026 ; -2.026 ; Fall       ; clock           ;
++-------------+------------+--------+--------+------------+-----------------+
+
+
++---------------------------------------------------------------------------------------+
+; Clock to Output Times                                                                 ;
++---------------------------+------------+-------+-------+------------+-----------------+
+; Data Port                 ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++---------------------------+------------+-------+-------+------------+-----------------+
+; address_writeback_mem[*]  ; clock      ; 7.231 ; 7.231 ; Fall       ; clock           ;
+;  address_writeback_mem[2] ; clock      ; 6.432 ; 6.432 ; Fall       ; clock           ;
+;  address_writeback_mem[3] ; clock      ; 7.231 ; 7.231 ; Fall       ; clock           ;
+; data_writeback_mem[*]     ; clock      ; 6.941 ; 6.941 ; Fall       ; clock           ;
+;  data_writeback_mem[0]    ; clock      ; 6.470 ; 6.470 ; Fall       ; clock           ;
+;  data_writeback_mem[1]    ; clock      ; 6.489 ; 6.489 ; Fall       ; clock           ;
+;  data_writeback_mem[2]    ; clock      ; 6.941 ; 6.941 ; Fall       ; clock           ;
+; hit_saida                 ; clock      ; 6.931 ; 6.931 ; Fall       ; clock           ;
+; q[*]                      ; clock      ; 6.927 ; 6.927 ; Fall       ; clock           ;
+;  q[0]                     ; clock      ; 6.689 ; 6.689 ; Fall       ; clock           ;
+;  q[1]                     ; clock      ; 6.444 ; 6.444 ; Fall       ; clock           ;
+;  q[2]                     ; clock      ; 6.927 ; 6.927 ; Fall       ; clock           ;
+; saida_via1[*]             ; clock      ; 6.942 ; 6.942 ; Fall       ; clock           ;
+;  saida_via1[0]            ; clock      ; 6.674 ; 6.674 ; Fall       ; clock           ;
+;  saida_via1[1]            ; clock      ; 6.911 ; 6.911 ; Fall       ; clock           ;
+;  saida_via1[2]            ; clock      ; 6.436 ; 6.436 ; Fall       ; clock           ;
+;  saida_via1[3]            ; clock      ; 6.868 ; 6.868 ; Fall       ; clock           ;
+;  saida_via1[4]            ; clock      ; 6.673 ; 6.673 ; Fall       ; clock           ;
+;  saida_via1[5]            ; clock      ; 6.652 ; 6.652 ; Fall       ; clock           ;
+;  saida_via1[6]            ; clock      ; 6.912 ; 6.912 ; Fall       ; clock           ;
+;  saida_via1[7]            ; clock      ; 6.692 ; 6.692 ; Fall       ; clock           ;
+;  saida_via1[8]            ; clock      ; 6.942 ; 6.942 ; Fall       ; clock           ;
+; saida_via2[*]             ; clock      ; 7.417 ; 7.417 ; Fall       ; clock           ;
+;  saida_via2[0]            ; clock      ; 6.924 ; 6.924 ; Fall       ; clock           ;
+;  saida_via2[1]            ; clock      ; 7.165 ; 7.165 ; Fall       ; clock           ;
+;  saida_via2[2]            ; clock      ; 7.193 ; 7.193 ; Fall       ; clock           ;
+;  saida_via2[3]            ; clock      ; 7.417 ; 7.417 ; Fall       ; clock           ;
+;  saida_via2[4]            ; clock      ; 6.992 ; 6.992 ; Fall       ; clock           ;
+;  saida_via2[5]            ; clock      ; 7.174 ; 7.174 ; Fall       ; clock           ;
+;  saida_via2[6]            ; clock      ; 6.673 ; 6.673 ; Fall       ; clock           ;
+;  saida_via2[7]            ; clock      ; 6.687 ; 6.687 ; Fall       ; clock           ;
++---------------------------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                         ;
++---------------------------+------------+-------+-------+------------+-----------------+
+; Data Port                 ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++---------------------------+------------+-------+-------+------------+-----------------+
+; address_writeback_mem[*]  ; clock      ; 3.678 ; 3.678 ; Fall       ; clock           ;
+;  address_writeback_mem[2] ; clock      ; 3.678 ; 3.678 ; Fall       ; clock           ;
+;  address_writeback_mem[3] ; clock      ; 4.061 ; 4.061 ; Fall       ; clock           ;
+; data_writeback_mem[*]     ; clock      ; 3.725 ; 3.725 ; Fall       ; clock           ;
+;  data_writeback_mem[0]    ; clock      ; 3.725 ; 3.725 ; Fall       ; clock           ;
+;  data_writeback_mem[1]    ; clock      ; 3.736 ; 3.736 ; Fall       ; clock           ;
+;  data_writeback_mem[2]    ; clock      ; 3.904 ; 3.904 ; Fall       ; clock           ;
+; hit_saida                 ; clock      ; 3.923 ; 3.923 ; Fall       ; clock           ;
+; q[*]                      ; clock      ; 3.703 ; 3.703 ; Fall       ; clock           ;
+;  q[0]                     ; clock      ; 3.809 ; 3.809 ; Fall       ; clock           ;
+;  q[1]                     ; clock      ; 3.703 ; 3.703 ; Fall       ; clock           ;
+;  q[2]                     ; clock      ; 3.920 ; 3.920 ; Fall       ; clock           ;
+; saida_via1[*]             ; clock      ; 3.691 ; 3.691 ; Fall       ; clock           ;
+;  saida_via1[0]            ; clock      ; 3.809 ; 3.809 ; Fall       ; clock           ;
+;  saida_via1[1]            ; clock      ; 3.906 ; 3.906 ; Fall       ; clock           ;
+;  saida_via1[2]            ; clock      ; 3.691 ; 3.691 ; Fall       ; clock           ;
+;  saida_via1[3]            ; clock      ; 3.875 ; 3.875 ; Fall       ; clock           ;
+;  saida_via1[4]            ; clock      ; 3.808 ; 3.808 ; Fall       ; clock           ;
+;  saida_via1[5]            ; clock      ; 3.779 ; 3.779 ; Fall       ; clock           ;
+;  saida_via1[6]            ; clock      ; 3.908 ; 3.908 ; Fall       ; clock           ;
+;  saida_via1[7]            ; clock      ; 3.806 ; 3.806 ; Fall       ; clock           ;
+;  saida_via1[8]            ; clock      ; 3.929 ; 3.929 ; Fall       ; clock           ;
+; saida_via2[*]             ; clock      ; 3.794 ; 3.794 ; Fall       ; clock           ;
+;  saida_via2[0]            ; clock      ; 3.919 ; 3.919 ; Fall       ; clock           ;
+;  saida_via2[1]            ; clock      ; 4.028 ; 4.028 ; Fall       ; clock           ;
+;  saida_via2[2]            ; clock      ; 4.040 ; 4.040 ; Fall       ; clock           ;
+;  saida_via2[3]            ; clock      ; 4.124 ; 4.124 ; Fall       ; clock           ;
+;  saida_via2[4]            ; clock      ; 3.939 ; 3.939 ; Fall       ; clock           ;
+;  saida_via2[5]            ; clock      ; 4.015 ; 4.015 ; Fall       ; clock           ;
+;  saida_via2[6]            ; clock      ; 3.794 ; 3.794 ; Fall       ; clock           ;
+;  saida_via2[7]            ; clock      ; 3.804 ; 3.804 ; Fall       ; clock           ;
++---------------------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clock      ; clock    ; 3        ; 8        ; 850      ; 2562802  ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clock      ; clock    ; 3        ; 8        ; 850      ; 2562802  ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 9     ; 9    ;
+; Unconstrained Input Port Paths  ; 663   ; 663  ;
+; Unconstrained Output Ports      ; 26    ; 26   ;
+; Unconstrained Output Port Paths ; 26    ; 26   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Thu Sep 15 23:03:19 2022
+Info: Command: quartus_sta Pratica1Parte3 -c Pratica1Parte3
+Info: qsta_default_script.tcl version: #1
+Warning (20028): Parallel compilation is not licensed and has been disabled
+Info (21077): Low junction temperature is 0 degrees C
+Info (21077): High junction temperature is 85 degrees C
+Critical Warning (332012): Synopsys Design Constraints File file not found: 'Pratica1Parte3.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info (332142): No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info (332105): Deriving Clocks
+    Info (332105): create_clock -period 1.000 -name clock clock
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -14.630
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):   -14.630     -1037.283 clock 
+Info (332146): Worst-case hold slack is 0.391
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.391         0.000 clock 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -2.000
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.000      -148.380 clock 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Critical Warning (332148): Timing requirements not met
+Info (332146): Worst-case setup slack is -5.981
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -5.981      -407.267 clock 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 clock 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is -2.000
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    -2.000      -148.380 clock 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 4551 megabytes
+    Info: Processing ended: Thu Sep 15 23:03:20 2022
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

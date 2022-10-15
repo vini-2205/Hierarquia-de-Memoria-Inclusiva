@@ -1,0 +1,146 @@
+# Reading C:/altera/13.0sp1/modelsim_ase/tcl/vsim/pref.tcl 
+# do Pratica1Parte3_run_msim_rtl_verilog.do 
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Copying C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# ** Warning: Copied C:\altera\13.0sp1\modelsim_ase\win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/user/Desktop/Documentos/4Periodo/LAOC/Pratica1Parte3_correta {C:/Users/user/Desktop/Documentos/4Periodo/LAOC/Pratica1Parte3_correta/memoria_principal.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module memoria_principal
+# 
+# Top level modules:
+# 	memoria_principal
+# vlog -vlog01compat -work work +incdir+C:/Users/user/Desktop/Documentos/4Periodo/LAOC/Pratica1Parte3_correta {C:/Users/user/Desktop/Documentos/4Periodo/LAOC/Pratica1Parte3_correta/Pratica1Parte3.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module Pratica1Parte3
+# 
+# Top level modules:
+# 	Pratica1Parte3
+# 
+# vlog -vlog01compat -work work +incdir+C:/Users/user/Desktop/Documentos/4Periodo/LAOC/Pratica1Parte3_correta {C:/Users/user/Desktop/Documentos/4Periodo/LAOC/Pratica1Parte3_correta/test_cache.v}
+# Model Technology ModelSim ALTERA vlog 10.1d Compiler 2012.11 Nov  2 2012
+# -- Compiling module test_cache
+# 
+# Top level modules:
+# 	test_cache
+# 
+# vsim -t 1ps -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs="+acc"  test_cache
+# vsim -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cycloneii_ver -L rtl_work -L work -voptargs=\"+acc\" -t 1ps test_cache 
+# Loading work.test_cache
+# Loading work.Pratica1Parte3
+# Loading work.memoria_principal
+# Loading altera_mf_ver.altsyncram
+# Loading altera_mf_ver.ALTERA_DEVICE_FAMILIES
+# Loading altera_mf_ver.ALTERA_MF_MEMORY_INITIALIZATION
+# ** Warning: (vsim-3015) C:/Users/user/Desktop/Documentos/4Periodo/LAOC/Pratica1Parte3_correta/test_cache.v(31): [PCDPC] - Port size (5 or 5) does not match connection size (4) for port 'address_writeback_mem'. The port definition is at: C:/Users/user/Desktop/Documentos/4Periodo/LAOC/Pratica1Parte3_correta/Pratica1Parte3.v(9).
+# 
+#         Region: /test_cache/cache
+# 
+# add wave *
+# view structure
+# .main_pane.structure.interior.cs.body.struct
+# view signals
+# .main_pane.objects.interior.cs.body.tree
+# run -all
+# tag: 100 index:00 valido:0
+# tag: 100 index:00 valido:1
+# HIT: 0 DataSaida: 111 valido: 1 lru: 1 Dirty: 0 novaData: 111 addres: 110100111
+# HIT: 0 DataSaida: 111 valido: 1 lru: 0 Dirty: 0 novaData: 100 addres: 100101100
+# HIT: 0 DataSaida: 111 valido: 1 lru: 0 Dirty: 0 novaData: 011 addres: 100000011
+# HIT: 0 DataSaida: 111 valido: 1 lru: 1 Dirty: 0 novaData: 111 addres: 110001111
+# HIT: 0 DataSaida: 111 valido: x lru: x Dirty: x novaData: xxx addres: xxxxxxxxx
+# HIT: 0 DataSaida: 111 valido: x lru: x Dirty: x novaData: xxx addres: xxxxxxxxx
+# HIT: 0 DataSaida: 111 valido: 1 lru: 1 Dirty: 0 novaData: 011 addres: 110xxx011
+# HIT: 0 DataSaida: 111 valido: x lru: x Dirty: x novaData: xxx addres: xxxxxxxxx
+# Caso 2
+# tag: 000 index:01 valido:0
+# tag: 000 index:01 valido:0
+# HIT: 1 DataSaida: 011 valido: 1 lru: 1 Dirty: 0 novaData: 111 addres: 110100111
+# HIT: 1 DataSaida: 011 valido: 1 lru: 0 Dirty: 0 novaData: 100 addres: 100101100
+# HIT: 1 DataSaida: 011 valido: 1 lru: 1 Dirty: 0 novaData: 011 addres: 110000011
+# HIT: 1 DataSaida: 011 valido: 1 lru: 0 Dirty: 0 novaData: 111 addres: 100001111
+# HIT: 1 DataSaida: 011 valido: x lru: x Dirty: x novaData: xxx addres: xxxxxxxxx
+# HIT: 1 DataSaida: 011 valido: x lru: x Dirty: x novaData: xxx addres: xxxxxxxxx
+# HIT: 1 DataSaida: 011 valido: 1 lru: 1 Dirty: 0 novaData: 011 addres: 110xxx011
+# HIT: 1 DataSaida: 011 valido: x lru: x Dirty: x novaData: xxx addres: xxxxxxxxx
+# Caso 3
+# tag: 000 index:01 valido:0
+# tag: 000 index:01 valido:0
+# HIT: 1 DataSaida: 101 valido: 1 lru: 1 Dirty: 0 novaData: 111 addres: 110100111
+# HIT: 1 DataSaida: 101 valido: 1 lru: 0 Dirty: 0 novaData: 100 addres: 100101100
+# HIT: 1 DataSaida: 101 valido: 1 lru: 1 Dirty: 1 novaData: 101 addres: 111000101
+# HIT: 1 DataSaida: 101 valido: 1 lru: 0 Dirty: 0 novaData: 111 addres: 100001111
+# HIT: 1 DataSaida: 101 valido: x lru: x Dirty: x novaData: xxx addres: xxxxxxxxx
+# HIT: 1 DataSaida: 101 valido: x lru: x Dirty: x novaData: xxx addres: xxxxxxxxx
+# HIT: 1 DataSaida: 101 valido: 1 lru: 1 Dirty: 0 novaData: 011 addres: 110xxx011
+# HIT: 1 DataSaida: 101 valido: x lru: x Dirty: x novaData: xxx addres: xxxxxxxxx
+# Caso 4
+# tag: 010 index:01 valido:0
+# tag: 010 index:01 valido:1
+# HIT: 0 DataSaida: 100 valido: 1 lru: 1 Dirty: 0 novaData: 111 addres: 110100111
+# HIT: 0 DataSaida: 100 valido: 1 lru: 0 Dirty: 0 novaData: 100 addres: 100101100
+# HIT: 0 DataSaida: 100 valido: 1 lru: 0 Dirty: 1 novaData: 101 addres: 101000101
+# HIT: 0 DataSaida: 100 valido: 1 lru: 1 Dirty: 1 novaData: 100 addres: 111010100
+# HIT: 0 DataSaida: 100 valido: x lru: x Dirty: x novaData: xxx addres: xxxxxxxxx
+# HIT: 0 DataSaida: 100 valido: x lru: x Dirty: x novaData: xxx addres: xxxxxxxxx
+# HIT: 0 DataSaida: 100 valido: 1 lru: 1 Dirty: 0 novaData: 011 addres: 110xxx011
+# HIT: 0 DataSaida: 100 valido: x lru: x Dirty: x novaData: xxx addres: xxxxxxxxx
+# Caso 5
+# tag: 001 index:01 valido:0
+# address_mem: 00101 data_mem:100 
+# tag: 001 index:01 valido:1
+# HIT: 0 DataSaida: 011 valido: 1 lru: 1 Dirty: 0 novaData: 111 addres: 110100111
+# HIT: 0 DataSaida: 011 valido: 1 lru: 0 Dirty: 0 novaData: 100 addres: 100101100
+# HIT: 0 DataSaida: 011 valido: 1 lru: 1 Dirty: 0 novaData: 011 addres: 110001011
+# HIT: 0 DataSaida: 011 valido: 1 lru: 0 Dirty: 1 novaData: 100 addres: 101010100
+# HIT: 0 DataSaida: 011 valido: x lru: x Dirty: x novaData: xxx addres: xxxxxxxxx
+# HIT: 0 DataSaida: 011 valido: x lru: x Dirty: x novaData: xxx addres: xxxxxxxxx
+# HIT: 0 DataSaida: 011 valido: 1 lru: 1 Dirty: 0 novaData: 011 addres: 110xxx011
+# HIT: 0 DataSaida: 011 valido: x lru: x Dirty: x novaData: xxx addres: xxxxxxxxx
+# Data_mem: 00001 Addres: 101
+# Caso 6
+# tag: 011 index:01 valido:0
+# tag: 011 index:01 valido:1
+# HIT: 0 DataSaida: 001 valido: 1 lru: 1 Dirty: 0 novaData: 111 addres: 110100111
+# HIT: 0 DataSaida: 001 valido: 1 lru: 0 Dirty: 0 novaData: 100 addres: 100101100
+# HIT: 0 DataSaida: 001 valido: 1 lru: 0 Dirty: 0 novaData: 011 addres: 100001011
+# HIT: 0 DataSaida: 001 valido: 1 lru: 1 Dirty: 1 novaData: 001 addres: 111011001
+# HIT: 0 DataSaida: 001 valido: x lru: x Dirty: x novaData: xxx addres: xxxxxxxxx
+# HIT: 0 DataSaida: 001 valido: x lru: x Dirty: x novaData: xxx addres: xxxxxxxxx
+# HIT: 0 DataSaida: 001 valido: 1 lru: 1 Dirty: 0 novaData: 011 addres: 110xxx011
+# HIT: 0 DataSaida: 001 valido: x lru: x Dirty: x novaData: xxx addres: xxxxxxxxx
+# Caso 7
+# tag: 000 index:01 valido:0
+# address_mem: 00001 data_mem:001 
+# tag: 000 index:01 valido:1
+# HIT: 0 DataSaida: 101 valido: 1 lru: 1 Dirty: 0 novaData: 111 addres: 110100111
+# HIT: 0 DataSaida: 101 valido: 1 lru: 0 Dirty: 0 novaData: 100 addres: 100101100
+# HIT: 0 DataSaida: 101 valido: 1 lru: 1 Dirty: 0 novaData: 101 addres: 110000101
+# HIT: 0 DataSaida: 101 valido: 1 lru: 0 Dirty: 1 novaData: 001 addres: 101011001
+# HIT: 0 DataSaida: 101 valido: x lru: x Dirty: x novaData: xxx addres: xxxxxxxxx
+# HIT: 0 DataSaida: 101 valido: x lru: x Dirty: x novaData: xxx addres: xxxxxxxxx
+# HIT: 0 DataSaida: 101 valido: 1 lru: 1 Dirty: 0 novaData: 011 addres: 110xxx011
+# HIT: 0 DataSaida: 101 valido: x lru: x Dirty: x novaData: xxx addres: xxxxxxxxx
+# Caso 8
+# tag: 010 index:01 valido:0
+# address_mem: 01001 data_mem:001 
+# tag: 010 index:01 valido:1
+# HIT: 0 DataSaida: 100 valido: 1 lru: 1 Dirty: 0 novaData: 111 addres: 110100111
+# HIT: 0 DataSaida: 100 valido: 1 lru: 0 Dirty: 0 novaData: 100 addres: 100101100
+# HIT: 0 DataSaida: 100 valido: 1 lru: 0 Dirty: 0 novaData: 101 addres: 100000101
+# HIT: 0 DataSaida: 100 valido: 1 lru: 1 Dirty: 0 novaData: 100 addres: 110010100
+# HIT: 0 DataSaida: 100 valido: x lru: x Dirty: x novaData: xxx addres: xxxxxxxxx
+# HIT: 0 DataSaida: 100 valido: x lru: x Dirty: x novaData: xxx addres: xxxxxxxxx
+# HIT: 0 DataSaida: 100 valido: 1 lru: 1 Dirty: 0 novaData: 011 addres: 110xxx011
+# HIT: 0 DataSaida: 100 valido: x lru: x Dirty: x novaData: xxx addres: xxxxxxxxx
+# 1
+# Break in Module test_cache at C:/Users/user/Desktop/Documentos/4Periodo/LAOC/Pratica1Parte3_correta/test_cache.v line 172
+# Simulation Breakpoint: 1
+# Break in Module test_cache at C:/Users/user/Desktop/Documentos/4Periodo/LAOC/Pratica1Parte3_correta/test_cache.v line 172
+# MACRO ./Pratica1Parte3_run_msim_rtl_verilog.do PAUSED at line 18

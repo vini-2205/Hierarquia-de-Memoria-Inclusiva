@@ -1,0 +1,66 @@
+m255
+K3
+13
+cModel Technology
+Z0 dC:\Users\user\Desktop\Documentos\4Periodo\LAOC\Pratica1Parte3_correta\simulation\modelsim
+vmemoria_principal
+IclC7boD[NhZi3AYagc=<?0
+V03Qkh<JlI9h9J`eLem[P@1
+Z1 dC:\Users\user\Desktop\Documentos\4Periodo\LAOC\Pratica1Parte3_correta\simulation\modelsim
+w1663289293
+8C:/Users/user/Desktop/Documentos/4Periodo/LAOC/Pratica1Parte3_correta/memoria_principal.v
+FC:/Users/user/Desktop/Documentos/4Periodo/LAOC/Pratica1Parte3_correta/memoria_principal.v
+L0 39
+Z2 OV;L;10.1d;51
+r1
+31
+Z3 o-vlog01compat -work work -O0
+Z4 !s92 -vlog01compat -work work +incdir+C:/Users/user/Desktop/Documentos/4Periodo/LAOC/Pratica1Parte3_correta -O0
+!i10b 1
+!s100 ?`<N;m_SVIBTkhERVhX_00
+!s85 0
+!s108 1663293811.758000
+!s107 C:/Users/user/Desktop/Documentos/4Periodo/LAOC/Pratica1Parte3_correta/memoria_principal.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/user/Desktop/Documentos/4Periodo/LAOC/Pratica1Parte3_correta|C:/Users/user/Desktop/Documentos/4Periodo/LAOC/Pratica1Parte3_correta/memoria_principal.v|
+!s101 -O0
+vPratica1Parte3
+IX`o61=W5oK4?]CEbEb[lA2
+VeKI:V==H>3RHJ<?BVO[o00
+R1
+w1663293159
+8C:/Users/user/Desktop/Documentos/4Periodo/LAOC/Pratica1Parte3_correta/Pratica1Parte3.v
+FC:/Users/user/Desktop/Documentos/4Periodo/LAOC/Pratica1Parte3_correta/Pratica1Parte3.v
+L0 1
+R2
+r1
+31
+R3
+R4
+n@pratica1@parte3
+!i10b 1
+!s100 lL1<8]m@nA;XGRZH>9Yhd3
+!s85 0
+!s108 1663293811.801000
+!s107 C:/Users/user/Desktop/Documentos/4Periodo/LAOC/Pratica1Parte3_correta/Pratica1Parte3.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/user/Desktop/Documentos/4Periodo/LAOC/Pratica1Parte3_correta|C:/Users/user/Desktop/Documentos/4Periodo/LAOC/Pratica1Parte3_correta/Pratica1Parte3.v|
+!s101 -O0
+vtest_cache
+!i10b 1
+!s100 C:Kn`Yo=YARU0Q`OA_`>23
+IhDRWNi7LdmaD=g1nJFO042
+VlO3Y9in40a^WRSN@BLA]D2
+R1
+w1663293773
+8C:/Users/user/Desktop/Documentos/4Periodo/LAOC/Pratica1Parte3_correta/test_cache.v
+FC:/Users/user/Desktop/Documentos/4Periodo/LAOC/Pratica1Parte3_correta/test_cache.v
+L0 6
+R2
+r1
+!s85 0
+31
+!s108 1663293811.850000
+!s107 C:/Users/user/Desktop/Documentos/4Periodo/LAOC/Pratica1Parte3_correta/test_cache.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/user/Desktop/Documentos/4Periodo/LAOC/Pratica1Parte3_correta|C:/Users/user/Desktop/Documentos/4Periodo/LAOC/Pratica1Parte3_correta/test_cache.v|
+!s101 -O0
+R3
+R4
